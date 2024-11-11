@@ -17,8 +17,13 @@ public class MainWindow extends Application {
         double screenWidth = Screen.getPrimary().getBounds().getWidth() - 50;
         double screenHeight = Screen.getPrimary().getBounds().getHeight() - 50;
 
-        Scene scene = new Scene(fxmlLoader.load(), screenWidth, screenHeight, javafx.scene.paint.Color.gray(0.9));
-        stage.setTitle("Hello!");
+        
+        Scene scene = new Scene(fxmlLoader.load(), screenWidth, screenHeight);
+        
+        String css = this.getClass().getResource("MainWindow.css").toExternalForm();
+        scene.getStylesheets().add(css);
+        
+        stage.setTitle("EK Routes");
         stage.centerOnScreen();
         //stage.setResizable(false);
         stage.setMaximized(true);
