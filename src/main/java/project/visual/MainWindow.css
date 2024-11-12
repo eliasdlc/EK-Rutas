@@ -8,7 +8,42 @@
 
 #sidebar {
 	-fx-background-color: "#2A2A2A";
-	-fx-background-radius: 16;
-	-fx-border-color: "#454545";
-	-fx-border-radius: 16;
+	-fx-background-radius: 32;
+}
+
+#mainElements {
+	-fx-background-color: "#454545";
+	-fx-background-radius: 32;
+}
+
+#mainElements FlowPane {
+	-fx-background-color: "#2A2A2A";
+	-fx-background-radius: 32;
+}
+
+#actionButtons Button {
+	-fx-background-radius: 16
+
+}
+
+#createButton {
+	-fx-background-color: linear-gradient(from 100% 50% to 0% 50%, #ecd6d6 29.76%, #eac1c1 32.19%, #e6a6a6 34.29%, #e38787 36.53%, #db3f3f 36.62%, #f25959 96.47%);
+
+}
+#createButton:hover {
+    -fx-background-color: linear-gradient(from 100% 50% to 0% 50%, #f2b5b5 29.76%, #f2a2a2 32.19%, #f28f8f 34.29%, #f26969 36.53%, #f24444 36.62%, #ff7b7b 96.47%);
+}
+
+#listButton {
+	-fx-background-color: linear-gradient(from 100% 50% to 0% 50%, #d7ddee 29.76%, #c0ccee 32.19%, #aebeed 34.29%, #87a0ea 36.53%, #3f66db 36.62%, #6c82e0 96.47%);
+
+}
+
+#estaditicsButton {
+	-fx-background-color: linear-gradient(from 100% 50% to 0% 50%, #dff9df 29.76%, #cef3ce 32.19%, #b3eab3 34.29%, #91e991 36.53%, #0eb50e 36.62%, #42e842 96.47%);
+
+}
+#history {
+	-fx-background-color: "#2A2A2A";
+	-fx-background-radius: 32;
 }
