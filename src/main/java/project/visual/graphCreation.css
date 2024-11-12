@@ -1,0 +1,17 @@
+root {
+	-fx-background-color:"black";
+}
+
+#background {
+	-fx-background-color:"#454545";
+}
+
+#map {
+	-fx-background-color: "#2A2A2A";
+	-fx-background-radius: 32;
+}
+
+#buttons {
+	-fx-background-color: "#2A2A2A";
+	-fx-background-radius: 32;
+}

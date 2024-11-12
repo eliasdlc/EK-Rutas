@@ -14,7 +14,6 @@ import javafx.stage.Stage;
 public class MainWindowController {
 	private Stage stage;
 	private Scene scene;
-	private Parent root;
 	
 	@FXML
 	public void changeToGraphCreation(ActionEvent e) throws IOException {
@@ -27,7 +26,7 @@ public class MainWindowController {
         
         scene = new Scene(fxmlLoader.load(), screenWidth, screenHeight);
         
-        String css = this.getClass().getResource("MainWindow.css").toExternalForm();
+        String css = this.getClass().getResource("graphCreation.css").toExternalForm();
         scene.getStylesheets().add(css);
         
         stage.setTitle("Graph Creation");
