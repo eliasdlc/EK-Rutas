@@ -3,15 +3,14 @@ package project.logic;
 import java.util.ArrayList;
 import java.util.List;
 
-// Clase Controlador de Mapa
 public class MapController {
 
-    private List<StopNode> stops;
+    private List<Graph> graphs;
     private static MapController myMap = null;
 
     public MapController() {
         super();
-        stops = new ArrayList<>();
+        graphs = new ArrayList<>();
     }
 
     public static MapController getInstance() {
@@ -20,12 +19,12 @@ public class MapController {
         }return myMap;
     }
 
-    public List<StopNode> getStops() {
-        return stops;
+    public List<Graph> getGraphs() {
+        return graphs;
     }
 
-    public void setStops(List<StopNode> stops) {
-        this.stops = stops;
+    public void setGraphs(List<Graph> grafos) {
+        this.graphs = grafos;
     }
 
 }

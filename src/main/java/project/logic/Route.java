@@ -12,8 +12,9 @@ public class Route {
     private double distance;
     private LocalTime time;
     private double cost;
+    private int trasbordo;
 
-    public Route(StopNode origin, StopNode destination, String name, String id, double distance, LocalTime time, double cost) {
+	public Route(StopNode origin, StopNode destination, String name, String id, double distance, LocalTime time, double cost, int trasbordo) {
         super();
         this.origin = origin;
         this.destination = destination;
@@ -22,6 +23,7 @@ public class Route {
         this.distance = distance;
         this.time = time;
         this.cost = cost;
+        this.trasbordo = trasbordo;
     }
 
     public StopNode getOrigin() {
@@ -75,5 +77,13 @@ public class Route {
     public String getId() {
         return id;
     }
+    
+    public int getTrasbordo() {
+		return trasbordo;
+	}
+
+	public void setTrasbordo(int trasbordo) {
+		this.trasbordo = trasbordo;
+	}
 
 }
