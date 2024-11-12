@@ -89,7 +89,69 @@ public class Graph {
 
         return camino; // Retornar la lista de nodos que conforman la ruta más corta
     }
-	
+
+    // ARBOL DE EXPANSION MINIMA (MST) CON PRIM
+    public List<Route> primMST(String criterio) {
+        // Verificación inicial: si el grafo está vacío o no tiene rutas, no hay MST
+        if (listRoutes.isEmpty()) return new ArrayList<>();
+
+        List<Route> mst = new ArrayList<>(); // Almacena las aristas del MST
+        Set<StopNode> visitados = new HashSet<>(); // Conjunto de nodos ya incluidos en el MST
+        PriorityQueue<Route> pq = new PriorityQueue<>(Comparator.comparingDouble(route -> getWeightByCriterion(route, criterio)));
+
+        // Inicializar el algoritmo desde un nodo arbitrario (primer nodo en la lista)
+        StopNode nodoInicial = listRoutes.keySet().iterator().next();
+        visitados.add(nodoInicial);
+
+        // Añadir todas las rutas adyacentes al nodo inicial a la cola de prioridad
+        for (Route ruta : listRoutes.get(nodoInicial)) {
+            pq.add(ruta);
+        }
+
+        // Mientras no se hayan visitado todos los nodos
+        while (!pq.isEmpty() && visitados.size() < listRoutes.size()) {
+            // Seleccionar la ruta de menor peso
+            Route rutaActual = pq.poll();
+            StopNode origen = rutaActual.getOrigin();
+            StopNode destino = rutaActual.getDestination();
+
+            // Determinar el nodo aún no visitado
+            StopNode siguienteNodo = visitados.contains(origen) ? destino : origen;
+
+            // Si el nodo de destino ya está visitado, ignorar esta arista
+            if (visitados.contains(siguienteNodo)) continue;
+
+            // Añadir el nodo al conjunto de visitados
+            visitados.add(siguienteNodo);
+
+            // Añadir la ruta seleccionada al MST
+            mst.add(rutaActual);
+
+            // Añadir todas las rutas adyacentes al nuevo nodo a la cola de prioridad
+            for (Route ruta : listRoutes.get(siguienteNodo)) {
+                if (!visitados.contains(ruta.getDestination())) {
+                    pq.add(ruta);
+                }
+            }
+        }
+
+        return mst; // Retornar el conjunto de aristas que forman el MST
+    }
+
+    // Metodo auxiliar para obtener el peso según el criterio especificado
+    private double getWeightByCriterion(Route route, String criterio) {
+        switch (criterio.toLowerCase()) {
+            case "distancia":
+                return route.getDistance();
+            case "costo":
+                return route.getCost();
+            case "tiempo":
+                return route.getTime().toSecondOfDay(); // Convertir tiempo a segundos
+            default:
+                throw new IllegalArgumentException("Criterio no válido. Use 'distancia', 'costo' o 'tiempo'.");
+        }
+    }
+
 	public void addNode(StopNode node) {
 	    if (!listRoutes.containsKey(node)) {
 	        listRoutes.put(node, new ArrayList<>());

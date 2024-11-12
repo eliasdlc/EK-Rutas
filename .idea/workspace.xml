@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/images/estadisticas.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/images/mapa-de-arbol-grafico.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/images/marcador-de-mapa.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/MainWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/MainWindow.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/main-window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/main-window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,18 +18,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;eliasdlc&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/eliasdlc/EK-Rutas.git",
+    "accountId": "d3dae09d-acdf-4f51-b6a4-87379a218772"
   }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:eliasdlc/EK-Rutas.git&quot;,
-    &quot;accountId&quot;: &quot;361e4995-fbd6-43e4-97f3-63be1650606f&quot;
-  }
-}</component>
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -45,7 +35,6 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2olFfLoJWgGoYFTI8H3lwiYHdY3" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -55,30 +44,25 @@
     "Application.HelloApplication.executor": "Run",
     "Application.MainWindow.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/elias/dev/projects/EK-Rutas/src/main/java/project/visual/images",
+    "last_opened_file_path": "C:/Users/elias/dev/java-projects/EK-Rutas/src/main/resources/project/visual",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.40292275",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\elias\dev\projects\EK-Rutas\src\main\java\project\visual\images" />
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\resources\project\visual" />
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\java\project\visual" />
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\java\project\logic" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\elias\dev\projects\EK-Rutas\src\main\resources" />
-      <recent name="C:\Users\elias\dev\projects\EK-Rutas\src\main\java\project\visual" />
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\resources\project\visual" />
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\java\project\visual" />
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\resources" />
@@ -87,8 +71,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.227" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.227" />
       </set>
     </attachedChunks>
   </component>
@@ -101,10 +85,7 @@
       <option name="presentableId" value="Default" />
       <updated>1731436358314</updated>
       <workItem from="1731436359380" duration="3724000" />
-      <workItem from="1731440681284" duration="61000" />
-      <workItem from="1731440860011" duration="261000" />
-      <workItem from="1731441771620" duration="96000" />
-      <workItem from="1731443965086" duration="3776000" />
+      <workItem from="1731448429043" duration="1797000" />
     </task>
     <servers />
   </component>
