@@ -15,7 +15,7 @@
    <right>
       <FlowPane fx:id="buttons" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER">
       	<BorderPane.margin>
-                <Insets bottom="0" left="20" right="0" top="0" />
+                <Insets bottom="0" left="10" right="0" top="0" />
             </BorderPane.margin>
       
          <children>
@@ -27,9 +27,9 @@
    </right>
    
    <left>
-      <Pane fx:id="map" maxWidth="1.7976931348623157E308" prefHeight="690.0" prefWidth="1026" BorderPane.alignment="CENTER">
+      <Pane fx:id="map" maxWidth="1.7976931348623157E308" prefHeight="690.0" prefWidth="1106" BorderPane.alignment="CENTER">
       		<BorderPane.margin>
-                <Insets bottom="0" left="0" right="20" top="0" />
+                <Insets bottom="0" left="0" right="10" top="0" />
             </BorderPane.margin>
       </Pane>
    </left>

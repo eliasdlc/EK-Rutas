@@ -20,7 +20,7 @@ public class graphCreation extends Application {
         
         Scene scene = new Scene(fxmlLoader.load(), screenWidth, screenHeight);
         
-        String css = this.getClass().getResource("MainWindow.css").toExternalForm();
+        String css = this.getClass().getResource("project/visual/MainWindow.css").toExternalForm();
         scene.getStylesheets().add(css);
         
         primaryStage.setTitle("Graph Creation");
