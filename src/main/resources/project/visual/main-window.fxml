@@ -6,6 +6,8 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
 <BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1028.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.visual.MainWindowController">
    
    <padding>
@@ -28,9 +30,17 @@
                <top>
                   <FlowPane fx:id="actionButtons" alignment="CENTER" columnHalignment="CENTER" hgap="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="495.0" minWidth="810.0" prefHeight="495.0" prefWidth="810.0" vgap="30.0" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="createButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeToGraphCreation" prefHeight="182.0" prefWidth="468.0" />
+                  <Button fx:id="createButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#changeToGraphCreation" prefHeight="182.0" prefWidth="468.0" >
+                      <graphic>
+                          <ImageView fitHeight="20" fitWidth="20">
+                              <image>
+                                  <Image url="@project/visual/images/marcador-de-mapa.png" />
+                              </image>
+                          </ImageView>
+                      </graphic>
+                  </Button>
                   <Button fx:id="listButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="182.0" prefWidth="468.0" />
-                  <Button fx:id="staditicsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="140.0" prefWidth="750.0" />
+                  <Button fx:id="staditicsButton" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" prefHeight="182.0" prefWidth="975.0" />
                </children>
                <BorderPane.margin>
                   <Insets />

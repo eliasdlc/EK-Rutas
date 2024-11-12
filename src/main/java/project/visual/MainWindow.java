@@ -1,14 +1,24 @@
 package project.visual;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class MainWindow extends Application {
+
+    @FXML
+    private Button createButton;
+    private Button listBttn;
+    private Button stadisticsBttn;
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainWindow.class.getResource("main-window.fxml"));
@@ -22,10 +32,16 @@ public class MainWindow extends Application {
         
         String css = this.getClass().getResource("MainWindow.css").toExternalForm();
         scene.getStylesheets().add(css);
-        
+
+        /*Image icon = new Image("C:\\Users\\elias\\dev\\projects\\EK-Rutas\\src\\main\\java\\project\\visual\\images\\marcador-de-mapa.png");
+        ImageView iconView = new ImageView(icon);
+        iconView.setFitHeight(50);
+        iconView.setFitWidth(50);
+
+        createButton.setGraphic(iconView);*/
+
         stage.setTitle("EK Routes");
         stage.centerOnScreen();
-        //stage.setResizable(false);
         stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
