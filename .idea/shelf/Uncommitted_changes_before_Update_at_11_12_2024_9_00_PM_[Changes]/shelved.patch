@@ -1,0 +1,99 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"23597b99-55e4-4256-96d4-a4fb13d39def\" name=\"Changes\" comment=\"\">\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/project/visual/images/estadisticas.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/project/visual/images/mapa-de-arbol-grafico.png\" afterDir=\"false\" />\r\n      <change afterPath=\"$PROJECT_DIR$/src/main/java/project/visual/images/marcador-de-mapa.png\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/project/visual/MainWindow.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/project/visual/MainWindow.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/visual/MainWindow.css\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/visual/MainWindow.css\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/main/resources/project/visual/main-window.fxml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/main/resources/project/visual/main-window.fxml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;eliasdlc&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;git@github.com:eliasdlc/EK-Rutas.git&quot;,\r\n    &quot;accountId&quot;: &quot;361e4995-fbd6-43e4-97f3-63be1650606f&quot;\r\n  }\r\n}</component>\r\n  <component name=\"MavenImportPreferences\">\r\n    <option name=\"generalSettings\">\r\n      <MavenGeneralSettings>\r\n        <option name=\"mavenHomeTypeForPersistence\" value=\"WRAPPER\" />\r\n      </MavenGeneralSettings>\r\n    </option>\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 4\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2olFfLoJWgGoYFTI8H3lwiYHdY3\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\"><![CDATA[{\r\n  \"keyToString\": {\r\n    \"Application.HelloApplication.executor\": \"Run\",\r\n    \"Application.MainWindow.executor\": \"Run\",\r\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\r\n    \"git-widget-placeholder\": \"main\",\r\n    \"kotlin-language-version-configured\": \"true\",\r\n    \"last_opened_file_path\": \"C:/Users/elias/dev/projects/EK-Rutas/src/main/java/project/visual/images\",\r\n    \"node.js.detected.package.eslint\": \"true\",\r\n    \"node.js.detected.package.tslint\": \"true\",\r\n    \"node.js.selected.package.eslint\": \"(autodetect)\",\r\n    \"node.js.selected.package.tslint\": \"(autodetect)\",\r\n    \"nodejs_package_manager_path\": \"npm\",\r\n    \"project.structure.last.edited\": \"Libraries\",\r\n    \"project.structure.proportion\": \"0.15\",\r\n    \"project.structure.side.proportion\": \"0.40292275\",\r\n    \"vue.rearranger.settings.migration\": \"true\"\r\n  }\r\n}]]></component>\r\n  <component name=\"RecentsManager\">\r\n    <key name=\"CopyFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\elias\\dev\\projects\\EK-Rutas\\src\\main\\java\\project\\visual\\images\" />\r\n      <recent name=\"C:\\Users\\elias\\dev\\java-projects\\EK-Rutas\\src\\main\\resources\\project\\visual\" />\r\n      <recent name=\"C:\\Users\\elias\\dev\\java-projects\\EK-Rutas\\src\\main\\java\\project\\visual\" />\r\n      <recent name=\"C:\\Users\\elias\\dev\\java-projects\\EK-Rutas\\src\\main\\java\\project\\logic\" />\r\n    </key>\r\n    <key name=\"MoveFile.RECENT_KEYS\">\r\n      <recent name=\"C:\\Users\\elias\\dev\\projects\\EK-Rutas\\src\\main\\resources\" />\r\n      <recent name=\"C:\\Users\\elias\\dev\\projects\\EK-Rutas\\src\\main\\java\\project\\visual\" />\r\n      <recent name=\"C:\\Users\\elias\\dev\\java-projects\\EK-Rutas\\src\\main\\resources\\project\\visual\" />\r\n      <recent name=\"C:\\Users\\elias\\dev\\java-projects\\EK-Rutas\\src\\main\\java\\project\\visual\" />\r\n      <recent name=\"C:\\Users\\elias\\dev\\java-projects\\EK-Rutas\\src\\main\\resources\" />\r\n    </key>\r\n  </component>\r\n  <component name=\"SharedIndexes\">\r\n    <attachedChunks>\r\n      <set>\r\n        <option value=\"bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62\" />\r\n        <option value=\"bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62\" />\r\n      </set>\r\n    </attachedChunks>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"23597b99-55e4-4256-96d4-a4fb13d39def\" name=\"Changes\" comment=\"\" />\r\n      <created>1731436358314</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1731436358314</updated>\r\n      <workItem from=\"1731436359380\" duration=\"3724000\" />\r\n      <workItem from=\"1731440681284\" duration=\"61000\" />\r\n      <workItem from=\"1731440860011\" duration=\"261000\" />\r\n      <workItem from=\"1731441771620\" duration=\"96000\" />\r\n      <workItem from=\"1731443965086\" duration=\"3776000\" />\r\n    </task>\r\n    <servers />\r\n  </component>\r\n  <component name=\"TypeScriptGeneratedFilesManager\">\r\n    <option name=\"version\" value=\"3\" />\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 47e832fd6a45359a57f148cf58538eb395a08d3a)
++++ b/.idea/workspace.xml	(date 1731459633625)
+@@ -4,15 +4,8 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/images/estadisticas.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/images/mapa-de-arbol-grafico.png" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/images/marcador-de-mapa.png" afterDir="false" />
++    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Se agregaron iconos para los botones.">
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/MainWindow.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/MainWindow.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/MainWindow.css" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/main-window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/main-window.fxml" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -50,25 +43,25 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "Application.HelloApplication.executor": "Run",
+-    "Application.MainWindow.executor": "Run",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "git-widget-placeholder": "main",
+-    "kotlin-language-version-configured": "true",
+-    "last_opened_file_path": "C:/Users/elias/dev/projects/EK-Rutas/src/main/java/project/visual/images",
+-    "node.js.detected.package.eslint": "true",
+-    "node.js.detected.package.tslint": "true",
+-    "node.js.selected.package.eslint": "(autodetect)",
+-    "node.js.selected.package.tslint": "(autodetect)",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Libraries",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.40292275",
+-    "vue.rearranger.settings.migration": "true"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
++    &quot;Application.MainWindow.executor&quot;: &quot;Run&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
++    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/elias/dev/projects/EK-Rutas/src/main/java/project/visual/images&quot;,
++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
++    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
++    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.40292275&quot;,
++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\elias\dev\projects\EK-Rutas\src\main\java\project\visual\images" />
+@@ -104,11 +97,25 @@
+       <workItem from="1731440681284" duration="61000" />
+       <workItem from="1731440860011" duration="261000" />
+       <workItem from="1731441771620" duration="96000" />
+-      <workItem from="1731443965086" duration="3776000" />
++      <workItem from="1731443965086" duration="5241000" />
++      <workItem from="1731453690569" duration="1094000" />
+     </task>
++    <task id="LOCAL-00001" summary="Se agregaron iconos para los botones.">
++      <option name="closed" value="true" />
++      <created>1731448353343</created>
++      <option name="number" value="00001" />
++      <option name="presentableId" value="LOCAL-00001" />
++      <option name="project" value="LOCAL" />
++      <updated>1731448353343</updated>
++    </task>
++    <option name="localTasksCounter" value="2" />
+     <servers />
+   </component>
+   <component name="TypeScriptGeneratedFilesManager">
+     <option name="version" value="3" />
+   </component>
++  <component name="VcsManagerConfiguration">
++    <MESSAGE value="Se agregaron iconos para los botones." />
++    <option name="LAST_COMMIT_MESSAGE" value="Se agregaron iconos para los botones." />
++  </component>
+ </project>
+\ No newline at end of file
