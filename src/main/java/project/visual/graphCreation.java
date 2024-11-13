@@ -3,6 +3,7 @@ package project.visual;
 import java.io.IOException;
 
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Screen;
@@ -16,7 +17,6 @@ public class graphCreation extends Application {
 
         double screenWidth = Screen.getPrimary().getBounds().getWidth() - 50;
         double screenHeight = Screen.getPrimary().getBounds().getHeight() - 50;
-
         
         Scene scene = new Scene(fxmlLoader.load(), screenWidth, screenHeight);
         

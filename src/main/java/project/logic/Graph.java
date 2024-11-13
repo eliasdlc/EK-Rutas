@@ -8,12 +8,24 @@ import java.util.*;
 
 public class Graph {
 	private HashMap<StopNode, List<Route>> listRoutes;
+    private final String graphId;
+    private List<StopNode> nodes;
 	
-	public Graph(int numVertex) {
+	public Graph(int numVertex, String graphId) {
 		setListRoutes(new HashMap<>(numVertex));
-	} 
-	
-	public List<StopNode> dijkstraShortestPath(StopNode origin, StopNode destination, String criterio) {
+        this.graphId = graphId;
+        this.nodes = new ArrayList<>();
+	}
+
+    public List<StopNode> getNodes() {
+        return nodes;
+    }
+
+    public void setNodes(List<StopNode> nodes) {
+        this.nodes = nodes;
+    }
+
+    public List<StopNode> dijkstraShortestPath(StopNode origin, StopNode destination, String criterio) {
         // Inicializar las estructuras
         Map<StopNode, Double> distancias = new HashMap<>();
         Map<StopNode, StopNode> predecesores = new HashMap<>();
@@ -152,7 +164,7 @@ public class Graph {
         }
     }
 
-	public void addNode(StopNode node) {
+	public void addNodeAdyList(StopNode node) {
 	    if (!listRoutes.containsKey(node)) {
 	        listRoutes.put(node, new ArrayList<>());
 	    }
@@ -209,6 +221,9 @@ public class Graph {
   		return listRoutes;
   	}
 
+    public String getGraphId(){
+        return graphId;
+    }
   	public void setListRoutes(HashMap<StopNode, List<Route>> listRoutes) {
   		this.listRoutes = listRoutes;
   	}

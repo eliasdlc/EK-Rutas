@@ -23,8 +23,17 @@ public class MapController {
         return graphs;
     }
 
-    public void setGraphs(List<Graph> grafos) {
-        this.graphs = grafos;
+    public void addGraph(Graph graph) {
+        graphs.add(graph);
+    }
+
+    public Graph searchGraphById(String id){
+        for(Graph aux : graphs) {
+            if(aux.getGraphId().equals(id)) {
+                return aux;
+            }
+        }
+        return null;
     }
 
 }
