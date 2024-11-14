@@ -2,9 +2,16 @@ package project.visual;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Insets;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundFill;
+import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import project.logic.Graph;
 import project.logic.IdGenerator;
 import project.logic.MapController;
@@ -35,10 +42,19 @@ public class graphCreationController {
             node.setStroke(javafx.scene.paint.Color.BLACK);
 
             TextField txtFld = new TextField(null);
-            txtFld.setLayoutX(x - 50);
-            txtFld.setLayoutY(y - baseRadius - 30);
-            txtFld.setPrefWidth(100);
+            txtFld.setPrefWidth(160);
             txtFld.setPrefHeight(20);
+            txtFld.setLayoutX(x - txtFld.getPrefWidth()/2);
+            txtFld.setLayoutY(y - (txtFld.getPrefHeight()/2) - baseRadius - 35);
+            txtFld.setBackground(new Background(new BackgroundFill(
+                    Color.rgb(42, 42, 42, 0),
+                    CornerRadii.EMPTY,      // Sin bordes redondeados
+                    Insets.EMPTY)));        // Sin margen interno
+            txtFld.setFont( Font.font("Arial", FontWeight.BOLD, 18) );
+            txtFld.setStyle("-fx-text-fill: white; -fx-alignment: center;");
+
+            //txtFld.setPromptText("Nombre del nodo");
+
 
             map.getChildren().add(node);
             map.getChildren().add(txtFld);
