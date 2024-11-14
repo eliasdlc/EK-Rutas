@@ -10,12 +10,22 @@ public class Graph {
 	private HashMap<StopNode, List<Route>> listRoutes;
     private final String graphId;
     private List<StopNode> nodes;
-	
+    private int numVertex;
+
 	public Graph(int numVertex, String graphId) {
 		setListRoutes(new HashMap<>(numVertex));
         this.graphId = graphId;
         this.nodes = new ArrayList<>();
+        this.numVertex = numVertex;
 	}
+
+    public int getNumVertex() {
+        return numVertex;
+    }
+
+    public void setNumVertex(int nummVertex) {
+        this.numVertex = nummVertex;
+    }
 
     public List<StopNode> getNodes() {
         return nodes;

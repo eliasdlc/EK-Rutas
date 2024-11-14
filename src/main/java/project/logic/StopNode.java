@@ -1,5 +1,9 @@
 package project.logic;
 
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
+
 // Clase Nodo
 public class StopNode {
 
@@ -7,6 +11,7 @@ public class StopNode {
     private String nombre;
     private double posX;
     private double posY;
+    private List<Route> routes;
 
 	public StopNode(String idNodo, String nombre, double posX, double posY) {
         super();
@@ -14,13 +19,28 @@ public class StopNode {
         this.nombre = nombre;
         this.posX = posX;
         this.posY = posY;
+        this.routes = new ArrayList<>();
     }
 
-    
+    public void setIdNodo(String idNodo) {
+        this.idNodo = idNodo;
+    }
+
+
+    public void setRoutes(List<Route> routes) {
+        this.routes = routes;
+    }
+
+
+    public List<Route> getRoutes() {
+        return routes;
+    }
+
 
     public String getIdNodo() {
         return idNodo;
     }
+
 
     public String getNombre() {
         return nombre;
@@ -50,5 +70,7 @@ public class StopNode {
     public void setPosY(double posY) {
         this.posY = posY;
     }
+
+
 
 }
