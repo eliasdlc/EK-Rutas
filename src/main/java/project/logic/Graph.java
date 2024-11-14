@@ -217,7 +217,39 @@ public class Graph {
 	    }
 	    listRoutes.remove(node);
 	}
-	
+
+    public StopNode searchNodeById(String id) {
+        for(StopNode aux : listRoutes.keySet()) {
+            if(aux.getIdNodo().equals(id)) {
+                return aux;
+            }
+        }
+        return null;
+    }
+
+    //                                                     DELETE LATER
+    public void printMST(String criterio) {
+        // Get the MST list of routes
+        List<Route> mst = primMST(criterio);
+
+        // Check if the MST is empty (no valid spanning tree found)
+        if (mst.isEmpty()) {
+            System.out.println("No Minimum Spanning Tree (MST) found for the graph.");
+            return;
+        }
+
+        // Print the MST routes with the corresponding weight based on the criterion
+        System.out.println("Minimum Spanning Tree (MST) based on " + criterio + ":");
+        for (Route route : mst) {
+            StopNode origin = route.getOrigin();
+            StopNode destination = route.getDestination();
+            double weight = getWeightByCriterion(route, criterio);
+
+            System.out.println("Route from " + origin.getNombre() + " to " + destination.getNombre() + " - "
+                    + criterio + ": " + weight);
+        }
+    }
+
     public List<StopNode> getAdjacentDestinations(){
         return new ArrayList<>(listRoutes.keySet());
     }

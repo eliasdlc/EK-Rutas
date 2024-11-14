@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Some stuff was fixed on main-window.fxml, and pictures where added">
+    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Agregación de nodos + su visual">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +30,12 @@
     &quot;assignee&quot;: &quot;kamiflowerf&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:eliasdlc/EK-Rutas.git",
-    "accountId": "361e4995-fbd6-43e4-97f3-63be1650606f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/eliasdlc/EK-Rutas.git&quot;,
+    &quot;accountId&quot;: &quot;d3dae09d-acdf-4f51-b6a4-87379a218772&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -83,8 +84,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.227" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.227" />
       </set>
     </attachedChunks>
   </component>
@@ -100,7 +101,6 @@
       <workItem from="1731448429043" duration="2717000" />
       <workItem from="1731521463610" duration="2431000" />
       <workItem from="1731525249560" duration="8451000" />
-      <workItem from="1731548712194" duration="5214000" />
     </task>
     <task id="LOCAL-00001" summary="Algoritmo de Prim para MST">
       <option name="closed" value="true" />
@@ -126,23 +126,7 @@
       <option name="project" value="LOCAL" />
       <updated>1731541179699</updated>
     </task>
-    <task id="LOCAL-00004" summary="Test for the algorithm was created.">
-      <option name="closed" value="true" />
-      <created>1731556692100</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1731556692100</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Some stuff was fixed on main-window.fxml, and pictures where added">
-      <option name="closed" value="true" />
-      <created>1731556946890</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1731556946890</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -151,8 +135,6 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Algoritmo de Prim para MST" />
     <MESSAGE value="Agregación de nodos + su visual" />
-    <MESSAGE value="Test for the algorithm was created." />
-    <MESSAGE value="Some stuff was fixed on main-window.fxml, and pictures where added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some stuff was fixed on main-window.fxml, and pictures where added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregación de nodos + su visual" />
   </component>
 </project>

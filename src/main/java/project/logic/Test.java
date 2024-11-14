@@ -2,6 +2,7 @@ package project.logic;
 
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Scanner;
 
 public class Test {
 
@@ -35,7 +36,6 @@ public class Test {
         Route route8reverse = new Route(node6, node3, "tal8", "8", 7, LocalTime.of(0, 22, 0), 10, 5);   // 22 minutos
         Route route9reverse = new Route(node7, node4, "tal9", "9", 30, LocalTime.of(0, 5, 0), 30, 1); // 5 minutos
 
-
         node1.getRoutes().add(route1);
         node2.getRoutes().add(route2);
         node3.getRoutes().add(route3);
@@ -47,7 +47,6 @@ public class Test {
         node3.getRoutes().add(route8);
         node4.getRoutes().add(route9);
 
-
         node2.getRoutes().add(route1reverse);
         node3.getRoutes().add(route2reverse);
         node4.getRoutes().add(route3reverse);
@@ -58,7 +57,6 @@ public class Test {
         node6.getRoutes().add(route8reverse);
         node7.getRoutes().add(route9reverse);
 
-
         graph.getNodes().add(node1);
         graph.getNodes().add(node2);
         graph.getNodes().add(node3);
@@ -66,7 +64,6 @@ public class Test {
         graph.getNodes().add(node5);
         graph.getNodes().add(node6);
         graph.getNodes().add(node7);
-
 
         graph.getListRoutes().put(node1, node1.getRoutes());
         graph.getListRoutes().put(node2, node2.getRoutes());
@@ -76,14 +73,30 @@ public class Test {
         graph.getListRoutes().put(node6, node6.getRoutes());
         graph.getListRoutes().put(node7, node7.getRoutes());
 
+        // Single Scanner instance for the entire program
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println("Dijkstra");
+        System.out.println("Inserte el id del nodo origen: ");
+        String origenId = scanner.nextLine();
 
+        System.out.println("Inserte el id del destino: ");
+        String destinoId = scanner.nextLine();
 
-        List<StopNode> shortestPath = graph.dijkstraShortestPath(node3, node7, "tiempo");
+        StopNode origen = graph.searchNodeById(origenId);
+        StopNode destino = graph.searchNodeById(destinoId);
+        List<StopNode> shortestPath = graph.dijkstraShortestPath(origen, destino, "tiempo");
         System.out.println("shortestPath: ");
         for (StopNode stopNode : shortestPath) {
-            System.out.println(stopNode.getIdNodo());
+            System.out.println(stopNode.getNombre());
         }
-    }
 
+        System.out.println("PRIM MST");
+        System.out.println("Elija el criterio para realizar el algoritmo (distancia/costo/tiempo)");
+        String criterio = scanner.nextLine();
+        graph.printMST(criterio);
+
+        // Close the scanner only at the very end
+        scanner.close();
+    }
 }
