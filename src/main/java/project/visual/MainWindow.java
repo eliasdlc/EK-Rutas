@@ -33,13 +33,6 @@ public class MainWindow extends Application {
         String css = this.getClass().getResource("MainWindow.css").toExternalForm();
         scene.getStylesheets().add(css);
 
-        /*Image icon = new Image("C:\\Users\\elias\\dev\\projects\\EK-Rutas\\src\\main\\java\\project\\visual\\images\\marcador-de-mapa.png");
-        ImageView iconView = new ImageView(icon);
-        iconView.setFitHeight(50);
-        iconView.setFitWidth(50);
-
-        createButton.setGraphic(iconView);*/
-
         stage.setTitle("EK Routes");
         stage.centerOnScreen();
         stage.setMaximized(true);
