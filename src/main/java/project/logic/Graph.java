@@ -35,7 +35,7 @@ public class Graph {
         this.nodes = nodes;
     }
 
-    public List<StopNode> dijkstraShortestPath(StopNode origin, StopNode destination, String criterio) {
+    public List<StopNode> dijkstraShortestPath(StopNode origin, StopNode destination, Criteria criterio) {
         // Inicializar las estructuras
         Map<StopNode, Double> distancias = new HashMap<>();
         Map<StopNode, StopNode> predecesores = new HashMap<>();
@@ -68,23 +68,8 @@ public class Graph {
                     for (Route ruta : adyacentes) {
                         StopNode vecino = ruta.getDestination();
                         if (visitados.contains(vecino)) continue;
-
                         // Obtener el peso según el criterio
-                        double peso = 0.0;
-                        switch (criterio.toLowerCase()) {
-                            case "distancia":
-                                peso = ruta.getDistance();
-                                break;
-                            case "costo":
-                                peso = ruta.getCost();
-                                break;
-                            case "tiempo":
-                                peso = ruta.getTime().toSecondOfDay();
-                                break;
-                            default:
-                                throw new IllegalArgumentException("Criterio no válido. Use 'distancia', 'costo' o 'tiempo'.");
-                        }
-
+                        double peso = getWeightByCriterion(ruta,criterio);
                         // Relajación de la arista
                         double nuevaDistancia = distancias.get(nodoActual) + peso;
                         if (nuevaDistancia < distancias.get(vecino)) {
@@ -113,7 +98,7 @@ public class Graph {
     }
 
     // ARBOL DE EXPANSION MINIMA (MST) CON PRIM
-    public List<Route> primMST(String criterio) {
+    public List<Route> primMST(Criteria criterio) {
         // Verificación inicial: si el grafo está vacío o no tiene rutas, no hay MST
         if (listRoutes.isEmpty()) return new ArrayList<>();
 
@@ -161,17 +146,18 @@ public class Graph {
     }
 
     // Metodo auxiliar para obtener el peso según el criterio especificado
-    private double getWeightByCriterion(Route route, String criterio) {
-        switch (criterio.toLowerCase()) {
-            case "distancia":
-                return route.getDistance();
-            case "costo":
-                return route.getCost();
-            case "tiempo":
-                return route.getTime().toSecondOfDay(); // Convertir tiempo a segundos
-            default:
-                throw new IllegalArgumentException("Criterio no válido. Use 'distancia', 'costo' o 'tiempo'.");
+    private double getWeightByCriterion(Route route, Criteria criterio) {
+        if(criterio == null){
+            double v = (3 * route.getCost() + 2 * route.getDistance() + route.getTime().getSecond() + (1 / 2) * (double) route.getTrasbordo()) /
+                    (route.getCost() + route.getDistance() + route.getTime().getSecond() + route.getTrasbordo());
+            return v;
         }
+        return switch (criterio) {
+            case DISTANCIA -> route.getDistance();
+            case COSTO -> route.getCost();
+            case TIEMPO -> route.getTime().toSecondOfDay(); // Convertir tiempo a segundos
+            case TRANSBORDO -> route.getTrasbordo();
+        };
     }
 
 	public void addNodeAdyList(StopNode node) {
@@ -184,7 +170,9 @@ public class Graph {
         getListRoutes().get(route.getOrigin()).add(route);
         getListRoutes().get(route.getDestination()).add(route);
     }
-    
+
+
+
 	public void removeRoute(Route route) {
 	    StopNode origin = route.getOrigin();
 	    StopNode destination = route.getDestination();
@@ -228,7 +216,7 @@ public class Graph {
     }
 
     //                                                     DELETE LATER
-    public void printMST(String criterio) {
+    public void printMST(Criteria criterio) {
         // Get the MST list of routes
         List<Route> mst = primMST(criterio);
 
