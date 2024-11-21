@@ -1,23 +1,16 @@
 package project.visual;
 
 import javafx.application.Application;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class MainWindow extends Application {
-
-    @FXML
-    private Button createButton;
-    private Button listBttn;
-    private Button stadisticsBttn;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -30,8 +23,18 @@ public class MainWindow extends Application {
         
         Scene scene = new Scene(fxmlLoader.load(), screenWidth, screenHeight);
         
-        String css = this.getClass().getResource("MainWindow.css").toExternalForm();
+        String css = Objects.requireNonNull(this.getClass().getResource("MainWindow.css")).toExternalForm();
         scene.getStylesheets().add(css);
+
+        /*Image icon = null;
+        try {
+            icon = new Image(Objects.requireNonNull(MainWindow.class.getResourceAsStream("project/visual/icons/gps_icon.png")));
+            stage.getIcons().add(icon);
+        } catch (NullPointerException e) {
+            System.out.println("Icon resource not found. Please check the path and filename.");
+        }
+
+        stage.getIcons().add(icon);*/
 
         stage.setTitle("EK Routes");
         stage.centerOnScreen();

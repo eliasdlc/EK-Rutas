@@ -15,17 +15,15 @@ public class graphCreation extends Application {
 	public void start(Stage primaryStage) throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(MainWindow.class.getResource("graph-creation.fxml"));
 
-        double screenWidth = Screen.getPrimary().getBounds().getWidth() - 50;
-        double screenHeight = Screen.getPrimary().getBounds().getHeight() - 50;
+
         
-        Scene scene = new Scene(fxmlLoader.load(), screenWidth, screenHeight);
+        Scene scene = new Scene(fxmlLoader.load());
         
         String css = this.getClass().getResource("project/visual/MainWindow.css").toExternalForm();
         scene.getStylesheets().add(css);
-        
+
         primaryStage.setTitle("Graph Creation");
         primaryStage.centerOnScreen();
-        //stage.setResizable(false);
         primaryStage.setMaximized(true);
         primaryStage.setScene(scene);
         primaryStage.show();

@@ -1,0 +1,21 @@
+root {
+    -fx-background-color:"black"
+}
+
+#background {
+    -fx-background-color:"#454545"
+}
+
+#sidebar {
+    -fx-background-color: #2A2A2A;
+    -fx-background-radius: 32;
+}
+
+#sidebar Button {
+    -fx-background-color: rgba(0, 0, 0, 0);
+}
+
+#actionButtons {
+    -fx-background-color: #2A2A2A;
+    -fx-background-radius: 32;
+}

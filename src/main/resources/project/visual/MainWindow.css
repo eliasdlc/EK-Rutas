@@ -11,12 +11,21 @@
 	-fx-background-radius: 32;
 }
 
-#mainElements {
-	-fx-background-color: #454545;
+#sidebar Button {
+	-fx-background-color: rgba(0, 0, 0, 0);
+}
+
+#actionButtons {
+	-fx-background-color: #2A2A2A;
 	-fx-background-radius: 32;
 }
 
-#mainElements FlowPane {
+#history {
+	-fx-background-color: #2A2A2A;
+	-fx-background-radius: 32;
+}
+
+#generalInfo {
 	-fx-background-color: #2A2A2A;
 	-fx-background-radius: 32;
 }
@@ -27,22 +36,20 @@
 }
 
 #createButton {
-	-fx-background-color: linear-gradient(from 100% 50% to 0% 50%, #ecd6d6 29.76%, #eac1c1 32.19%, #e6a6a6 34.29%, #e38787 36.53%, #db3f3f 36.62%, #f25959 96.47%);
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #ecd6d6 29.76%, #eac1c1 32.19%, #e6a6a6 34.29%, #e38787 36.53%, #E22B2B 36.62%, #FF4D4D 96.47%);
 
-}
-#createButton:hover {
-    -fx-background-color: linear-gradient(from 100% 50% to 0% 50%, #ecd6d6 29.76%, #eac1c1 32.19%, #e6a6a6 34.29%, #f26969 36.53%, #ff7b7b 36.62%, #f24444 96.47%);
 }
 
 #listButton {
-	-fx-background-color: linear-gradient(from 100% 50% to 0% 50%, #d7ddee 29.76%, #c0ccee 32.19%, #aebeed 34.29%, #87a0ea 36.53%, #3f66db 36.62%, #6c82e0 96.47%);
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #d7ddee 29.76%, #c0ccee 32.19%, #aebeed 34.29%, #87a0ea 36.53%, #2355EA 36.62%, #627EFA  96.47%);
 
 }
 
-#staditicsButton {
-	-fx-background-color: linear-gradient(from 100% 50% to 0% 50%, #dff9df 29.76%, #cef3ce 32.19%, #b3eab3 34.29%, #91e991 36.53%, #0eb50e 36.62%, #42e842 96.47%);
+#stadisticsButton {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #dff9df 29.76%, #cef3ce 32.19%, #b3eab3 34.29%, #91e991 36.53%, #17CB17 36.62%, #45D845 96.47%);
 
 }
+
 #history {
 	-fx-background-color: "#2A2A2A";
 	-fx-background-radius: 32;

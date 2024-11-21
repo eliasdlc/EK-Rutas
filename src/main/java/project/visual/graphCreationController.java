@@ -50,11 +50,8 @@ public class graphCreationController {
                     Color.rgb(42, 42, 42, 0),
                     CornerRadii.EMPTY,      // Sin bordes redondeados
                     Insets.EMPTY)));        // Sin margen interno
-            txtFld.setFont( Font.font("Arial", FontWeight.BOLD, 18) );
+            txtFld.setFont( Font.font("Inter", FontWeight.BOLD, 18) );
             txtFld.setStyle("-fx-text-fill: white; -fx-alignment: center;");
-
-            //txtFld.setPromptText("Nombre del nodo");
-
 
             map.getChildren().add(node);
             map.getChildren().add(txtFld);
