@@ -1,6 +1,6 @@
 package project.logic;
 
-import java.time.LocalTime;
+import java.time.Duration;
 
 // Clase Arista
 public class Route {
@@ -8,18 +8,16 @@ public class Route {
     private StopNode origin;
     private StopNode destination;
     private String name;
-    private String id;
     private double distance;
-    private LocalTime time;
+    private Duration time;
     private double cost;
     private int trasbordo;
 
-	public Route(StopNode origin, StopNode destination, String name, String id, double distance, LocalTime time, double cost, int trasbordo) {
+	public Route(StopNode origin, StopNode destination, String name, double distance, Duration time, double cost, int trasbordo) {
         super();
         this.origin = origin;
         this.destination = destination;
         this.name = name;
-        this.id = id;
         this.distance = distance;
         this.time = time;
         this.cost = cost;
@@ -58,11 +56,11 @@ public class Route {
         this.distance = distance;
     }
 
-    public LocalTime getTime() {
+    public Duration getTime() {
         return time;
     }
 
-    public void setTime(LocalTime time) {
+    public void setTime(Duration time) {
         this.time = time;
     }
 
@@ -72,10 +70,6 @@ public class Route {
 
     public void setCost(double cost) {
         this.cost = cost;
-    }
-
-    public String getId() {
-        return id;
     }
     
     public int getTrasbordo() {

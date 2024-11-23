@@ -20,8 +20,8 @@
       
          <children>
             <Button mnemonicParsing="false" onAction="#addNode" text="Agregar Nodo" />
-            <Button mnemonicParsing="false" text="Button" />
-            <Button mnemonicParsing="false" text="Button" />
+            <Button mnemonicParsing="false" onAction="#addRoute" text="Agregar Arista" />
+            <Button mnemonicParsing="false" text="Guardar" />
          </children>
       </FlowPane>
    </right>

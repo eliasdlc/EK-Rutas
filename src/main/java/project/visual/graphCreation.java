@@ -14,8 +14,6 @@ public class graphCreation extends Application {
 	@Override
 	public void start(Stage primaryStage) throws IOException {
 		FXMLLoader fxmlLoader = new FXMLLoader(MainWindow.class.getResource("graph-creation.fxml"));
-
-
         
         Scene scene = new Scene(fxmlLoader.load());
         

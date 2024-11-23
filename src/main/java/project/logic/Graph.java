@@ -148,14 +148,14 @@ public class Graph {
     // Metodo auxiliar para obtener el peso según el criterio especificado
     private double getWeightByCriterion(Route route, Criteria criterio) {
         if(criterio == null){
-            double v = (3 * route.getCost() + 2 * route.getDistance() + route.getTime().getSecond() + (1 / 2) * (double) route.getTrasbordo()) /
-                    (route.getCost() + route.getDistance() + route.getTime().getSecond() + route.getTrasbordo());
+            double v = (3 * route.getCost() + 2 * route.getDistance() + route.getTime().toSeconds() + (1 / 2) * (double) route.getTrasbordo()) /
+                    (route.getCost() + route.getDistance() + route.getTime().toSeconds() + route.getTrasbordo());
             return v;
         }
         return switch (criterio) {
             case DISTANCIA -> route.getDistance();
             case COSTO -> route.getCost();
-            case TIEMPO -> route.getTime().toSecondOfDay(); // Convertir tiempo a segundos
+            case TIEMPO -> route.getTime().toSeconds(); // Convertir tiempo a segundos
             case TRANSBORDO -> route.getTrasbordo();
         };
     }
@@ -165,13 +165,14 @@ public class Graph {
 	        listRoutes.put(node, new ArrayList<>());
 	    }
 	}
-	
+
 	public void addListAdy(Route route) {
+        addNodeAdyList(route.getOrigin());
+        addNodeAdyList(route.getDestination());
+
         getListRoutes().get(route.getOrigin()).add(route);
         getListRoutes().get(route.getDestination()).add(route);
     }
-
-
 
 	public void removeRoute(Route route) {
 	    StopNode origin = route.getOrigin();
@@ -213,29 +214,6 @@ public class Graph {
             }
         }
         return null;
-    }
-
-    //                                                     DELETE LATER
-    public void printMST(Criteria criterio) {
-        // Get the MST list of routes
-        List<Route> mst = primMST(criterio);
-
-        // Check if the MST is empty (no valid spanning tree found)
-        if (mst.isEmpty()) {
-            System.out.println("No Minimum Spanning Tree (MST) found for the graph.");
-            return;
-        }
-
-        // Print the MST routes with the corresponding weight based on the criterion
-        System.out.println("Minimum Spanning Tree (MST) based on " + criterio + ":");
-        for (Route route : mst) {
-            StopNode origin = route.getOrigin();
-            StopNode destination = route.getDestination();
-            double weight = getWeightByCriterion(route, criterio);
-
-            System.out.println("Route from " + origin.getNombre() + " to " + destination.getNombre() + " - "
-                    + criterio + ": " + weight);
-        }
     }
 
     public List<StopNode> getAdjacentDestinations(){
