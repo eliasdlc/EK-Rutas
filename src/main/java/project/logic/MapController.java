@@ -1,16 +1,23 @@
 package project.logic;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapController {
+public class MapController implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = 1L;
     private List<Graph> graphs;
+    private List<User> users;
     private static MapController myMap = null;
+    private static User loginUser;
+    private static final String FILE_PATH = "EK_Routes.dat"; // file path
 
     public MapController() {
         super();
         graphs = new ArrayList<>();
+        users = new ArrayList<>();
     }
 
     public static MapController getInstance() {
@@ -19,9 +26,31 @@ public class MapController {
         }return myMap;
     }
 
+    public static void saveData(){
+        try(ObjectOutputStream out = new ObjectOutputStream(new FileOutputStream(FILE_PATH))){
+            out.writeObject(myMap);
+        } catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+
+    public static void loadData(){
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_PATH))){
+            myMap = (MapController) in.readObject();
+        } catch (FileNotFoundException e){
+            myMap = new MapController();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
     public List<Graph> getGraphs() {
         return graphs;
     }
+
+    public List<User> getUsers() { return users; }
 
     public void addGraph(Graph graph) {
         graphs.add(graph);
@@ -35,5 +64,24 @@ public class MapController {
         }
         return null;
     }
+
+    private boolean confirmLogin(String username, String password) {
+        boolean login = false;
+        for(User user : users) {
+            if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                loginUser = user;
+                login = true;
+            }
+        }
+        return login;
+    }
+
+    public User getConfirmedUser(String username, String password) {
+        if(confirmLogin(username, password)) {
+            return loginUser;
+        }
+        return null;
+    }
+
 
 }

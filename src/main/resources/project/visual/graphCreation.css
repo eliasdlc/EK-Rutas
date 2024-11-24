@@ -11,6 +11,11 @@ root {
 	-fx-background-radius: 32;
 }
 
+#options{
+	-fx-background-color: "#2A2A2A";
+	-fx-background-radius: 22;
+}
+
 #buttons {
 	-fx-background-color: "#2A2A2A";
 	-fx-background-radius: 32;

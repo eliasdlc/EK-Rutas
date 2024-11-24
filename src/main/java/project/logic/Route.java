@@ -1,10 +1,13 @@
 package project.logic;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.time.Duration;
 
 // Clase Arista
-public class Route {
-
+public class Route implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
     private StopNode origin;
     private StopNode destination;
     private String name;

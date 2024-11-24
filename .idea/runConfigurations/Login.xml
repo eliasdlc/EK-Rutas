@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="MainWindow" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="project.visual.MainWindow" />
+  <configuration default="false" name="Login" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="project.visual.Login" />
     <module name="EK-Rutas" />
     <method v="2">
       <option name="Make" enabled="true" />

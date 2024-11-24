@@ -22,6 +22,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import project.logic.MapController;
 
 public class MainWindowController {
     private Stage stage;
@@ -71,6 +72,7 @@ public class MainWindowController {
 
     @FXML
     public void closeApp(ActionEvent e){
+        MapController.saveData();
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         stage.close();
     }

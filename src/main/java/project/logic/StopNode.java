@@ -1,12 +1,16 @@
 package project.logic;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 // Clase Nodo
-public class StopNode {
+public class StopNode implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = 1L;
     private String idNodo;
     private String nombre;
     private double posX;

@@ -32,9 +32,15 @@
                 <Insets bottom="0" left="0" right="10" top="0" />
             </BorderPane.margin>
 
-
-      </Pane>
+            
+                  </Pane>
    </left>
+   <top>
+      <Pane fx:id="options" prefHeight="30.0" prefWidth="570.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="backBtn" layoutX="14.0" layoutY="2.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+         </children></Pane>
+   </top>
    
 
 </BorderPane>

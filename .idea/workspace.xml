@@ -4,18 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="enum for criteria + priority method + some minor fixes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/routeInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/routeInfoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/routeInfo.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/routeInfo.fxml" afterDir="false" />
+    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="routes can now be added in visual">
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/loginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/MainWindow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Login.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/MapController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/StopNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/StopNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +32,8 @@
         <option value="Enum" />
         <option value="JavaFXApplication" />
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -66,6 +70,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.HelloApplication.executor": "Run",
+    "Application.Login.executor": "Run",
     "Application.MainWindow.executor": "Run",
     "Application.Test.executor": "Run",
     "Application.routeInfo.executor": "Run",
@@ -121,7 +126,7 @@
       <workItem from="1732102208697" duration="773000" />
       <workItem from="1732193165619" duration="812000" />
       <workItem from="1732217399675" duration="815000" />
-      <workItem from="1732369974124" duration="24354000" />
+      <workItem from="1732369974124" duration="34483000" />
     </task>
     <task id="LOCAL-00001" summary="Algoritmo de Prim para MST">
       <option name="closed" value="true" />
@@ -163,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732052785786</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="routes can now be added in visual">
+      <option name="closed" value="true" />
+      <created>1732402318469</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1732402318469</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -174,6 +187,7 @@
     <MESSAGE value="Agregación de nodos + su visual" />
     <MESSAGE value="test completed" />
     <MESSAGE value="enum for criteria + priority method + some minor fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="enum for criteria + priority method + some minor fixes" />
+    <MESSAGE value="routes can now be added in visual" />
+    <option name="LAST_COMMIT_MESSAGE" value="routes can now be added in visual" />
   </component>
 </project>

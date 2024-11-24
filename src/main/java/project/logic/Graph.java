@@ -1,12 +1,16 @@
 package project.logic;
 
+import java.io.Serial;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.*;
 
-public class Graph {
+public class Graph implements Serializable {
+    @Serial
+    private static final long serialVersionUID = 1L;
 	private HashMap<StopNode, List<Route>> listRoutes;
     private final String graphId;
     private List<StopNode> nodes;

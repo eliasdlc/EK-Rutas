@@ -5,7 +5,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Background;
@@ -18,6 +17,7 @@ import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import project.logic.Graph;
 import project.logic.IdGenerator;
@@ -38,6 +38,33 @@ public class graphCreationController {
     private boolean addingRoute = false;
     private Circle selCircle1 = null;
     private Circle selCircle2 = null;
+
+    @FXML
+    private void goBack(ActionEvent event) {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        currentStage.close();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("main-window.fxml"));
+
+            double screenWidth = Screen.getPrimary().getBounds().getWidth();
+            double screenHeight = Screen.getPrimary().getBounds().getHeight() - 50;
+            Scene scene = new Scene(loader.load(),screenWidth,screenHeight);
+
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            String css = Objects.requireNonNull(this.getClass().getResource("MainWindow.css")).toExternalForm();
+            scene.getStylesheets().add(css);
+            stage.setTitle("EK Routes");
+            stage.centerOnScreen();
+            //stage.setMaximized(true);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     private void addNode(ActionEvent e){
@@ -167,19 +194,6 @@ public class graphCreationController {
         } catch (IOException ex){
             ex.printStackTrace();
         }
-    }
-    @FXML
-    private void changeToRouteInfo(ActionEvent e) throws IOException{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("routeInfo.fxml"));
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        Scene scene = new Scene(loader.load());
-        String css = Objects.requireNonNull(this.getClass().getResource("routeInfo.css")).toExternalForm();
-        scene.getStylesheets().add(css);
-        stage.setTitle("Info Ruta");
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.centerOnScreen();
-        stage.setScene(scene);
-        stage.show();
     }
 
     private void drawLine(Circle circle1, Circle circle2){
