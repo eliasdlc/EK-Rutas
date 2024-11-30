@@ -6,25 +6,69 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
 
+<?import javafx.scene.layout.StackPane?>
 <BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.visual.graphCreationController">
 
 	<padding>
       <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
    </padding>
-   
-   <right>
-      <FlowPane fx:id="buttons" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER">
-      	<BorderPane.margin>
-                <Insets bottom="0" left="10" right="0" top="0" />
-            </BorderPane.margin>
-      
-         <children>
-            <Button mnemonicParsing="false" onAction="#addNode" text="Agregar Nodo" />
-            <Button mnemonicParsing="false" onAction="#addRoute" text="Agregar Arista" />
-            <Button mnemonicParsing="false" text="Guardar" />
-         </children>
-      </FlowPane>
-   </right>
+
+    <right>
+        <StackPane fx:id="stackPane" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER">
+            <!-- Buttons Panel -->
+            <FlowPane fx:id="buttons" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER">
+                <BorderPane.margin>
+                    <Insets bottom="0" left="10" right="0" top="0" />
+                </BorderPane.margin>
+                <children>
+                    <Button mnemonicParsing="false" onAction="#addNode" text="Agregar Nodo" />
+                    <Button mnemonicParsing="false" text="Eliminar" onAction="#deleteNode"/>
+                    <Button mnemonicParsing="false" text="Guardar" />
+                </children>
+            </FlowPane>
+
+            <!-- Trip Panel -->
+            <FlowPane fx:id="tripPanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
+                      visible="false" disable="true" style="-fx-background-color: #2A2A2A;">
+                <children>
+                    <Button mnemonicParsing="false" text="Escoger Algoritmo" onAction="#showAlgorithmPanel"/>
+                    <Button mnemonicParsing="false" text="Escoger Prioridad" onAction="#showPriorityPanel"/>
+                    <Button mnemonicParsing="false" text="Encontrar" onAction="#findWay"/>
+                    <Button mnemonicParsing="false" text="Exit" onAction="#exitTripSelection"/>
+                </children>
+            </FlowPane>
+
+            <!-- Node handler panel-->
+            <FlowPane fx:id="nodeHandlerPanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
+                      visible="false" disable="true" >
+                <children>
+                    <Button mnemonicParsing="false" text="Agregar Ruta" onAction="#addRoute"/>
+                    <Button mnemonicParsing="false" text="Encontrar Camino" onAction="#showTripPanel"/>
+                </children>
+            </FlowPane>
+
+            <!-- Algorithm Panel -->
+            <FlowPane fx:id="algorithmPanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
+                      visible="false" disable="true">
+                <children>
+                    <Button mnemonicParsing="false" text="Dijkstra" onAction="#chooseDijkstra"/>
+                    <Button mnemonicParsing="false" text="Prim MST" onAction="#choosePrim"/>
+                </children>
+            </FlowPane>
+
+            <!-- Priority Panel -->
+            <FlowPane fx:id="priorityPanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
+                      visible="false" disable="true">
+                <children>
+                    <Button mnemonicParsing="false" text="General" onAction="#chooseGeneral"/>
+                    <Button mnemonicParsing="false" text="Distancia" onAction="#chooseDistancia"/>
+                    <Button mnemonicParsing="false" text="Tiempo" onAction="#chooseTiempo"/>
+                    <Button mnemonicParsing="false" text="Costo" onAction="#chooseCosto"/>
+                    <Button mnemonicParsing="false" text="Transbordo" onAction="#chooseTransbordo"/>
+                </children>
+            </FlowPane>
+        </StackPane>
+    </right>
    
    <left>
       <Pane fx:id="map" maxWidth="1.7976931348623157E308" prefHeight="690.0" prefWidth="1106" BorderPane.alignment="CENTER">

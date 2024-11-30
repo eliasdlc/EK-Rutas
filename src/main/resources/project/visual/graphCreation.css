@@ -20,3 +20,23 @@ root {
 	-fx-background-color: "#2A2A2A";
 	-fx-background-radius: 32;
 }
+
+#nodeHandlerPanel {
+	-fx-background-color: "2A2A2A";
+	-fx-background-radius: 32;
+}
+
+#priorityPanel {
+	-fx-background-color: "2A2A2A";
+	-fx-background-radius: 32;
+}
+
+#algorithmPanel {
+	-fx-background-color: "2A2A2A";
+	-fx-background-radius: 32;
+}
+
+#tripPanel {
+	-fx-background-color: "2A2A2A";
+	-fx-background-radius: 32;
+}

@@ -102,7 +102,7 @@ public class Graph implements Serializable {
     }
 
     // ARBOL DE EXPANSION MINIMA (MST) CON PRIM
-    public List<Route> primMST(Criteria criterio) {
+    public List<Route> primMST(StopNode nodoInicial, Criteria criterio) {
         // Verificación inicial: si el grafo está vacío o no tiene rutas, no hay MST
         if (listRoutes.isEmpty()) return new ArrayList<>();
 
@@ -111,7 +111,6 @@ public class Graph implements Serializable {
         PriorityQueue<Route> pq = new PriorityQueue<>(Comparator.comparingDouble(route -> getWeightByCriterion(route, criterio)));
 
         // Inicializar el algoritmo desde un nodo arbitrario (primer nodo en la lista)
-        StopNode nodoInicial = listRoutes.keySet().iterator().next();
         visitados.add(nodoInicial);
 
         // Añadir todas las rutas adyacentes al nodo inicial a la cola de prioridad

@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="routes can now be added in visual">
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/Login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/loginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/MainWindow.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Login.xml" afterDir="false" />
+    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="oops, forgot the file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EK_Routes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/EK_Routes.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/MapController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Route.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Route.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/StopNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/StopNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" afterDir="false" />
@@ -67,27 +58,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.HelloApplication.executor": "Run",
-    "Application.Login.executor": "Run",
-    "Application.MainWindow.executor": "Run",
-    "Application.Test.executor": "Run",
-    "Application.routeInfo.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/elias/dev/java-projects/EK-Rutas/src/main/resources/project/visual",
-    "list.type.of.created.stylesheet": "CSS",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Login.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
+    &quot;Application.graphCreation.executor&quot;: &quot;Run&quot;,
+    &quot;Application.routeInfo.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/elias/dev/java-projects/EK-Rutas/src/main/resources/project/visual&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\resources\project\visual" />
@@ -126,7 +118,11 @@
       <workItem from="1732102208697" duration="773000" />
       <workItem from="1732193165619" duration="812000" />
       <workItem from="1732217399675" duration="815000" />
-      <workItem from="1732369974124" duration="34483000" />
+      <workItem from="1732369974124" duration="34973000" />
+      <workItem from="1732627549323" duration="15390000" />
+      <workItem from="1732730159406" duration="49000" />
+      <workItem from="1732802784173" duration="8329000" />
+      <workItem from="1732891686404" duration="12063000" />
     </task>
     <task id="LOCAL-00001" summary="Algoritmo de Prim para MST">
       <option name="closed" value="true" />
@@ -176,7 +172,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732402318469</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="files + login (brother im tired)">
+      <option name="closed" value="true" />
+      <created>1732412400714</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1732412400714</updated>
+    </task>
+    <task id="LOCAL-00008" summary="files + login (brother im tired)">
+      <option name="closed" value="true" />
+      <created>1732412432658</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1732412432658</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,6 +200,7 @@
     <MESSAGE value="test completed" />
     <MESSAGE value="enum for criteria + priority method + some minor fixes" />
     <MESSAGE value="routes can now be added in visual" />
-    <option name="LAST_COMMIT_MESSAGE" value="routes can now be added in visual" />
+    <MESSAGE value="files + login (brother im tired)" />
+    <option name="LAST_COMMIT_MESSAGE" value="files + login (brother im tired)" />
   </component>
 </project>
