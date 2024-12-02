@@ -37,6 +37,8 @@ public class graphCreationController {
     private FlowPane priorityPanel;
     @FXML
     private FlowPane nodeHandlerPanel;
+    @FXML
+    private FlowPane deletePanel;
     private Graph graph = null;
     private final int baseNumVertex = 10;
     private final int baseRadius = 30;
@@ -46,7 +48,8 @@ public class graphCreationController {
     private boolean prim = false;
     private boolean deletingMode = false;
     private Criteria priority = null;
-    Set<Pair<StopNode, StopNode>> drawnRoutes = new HashSet<>();
+    private Map<Button, TextField> buttonTextFieldMap = new HashMap<>();
+    private Set<Pair<StopNode, StopNode>> drawnRoutes = new HashSet<>();
 
     @FXML
     private void initialize() {
@@ -55,23 +58,17 @@ public class graphCreationController {
         // ELSE, LOAD A NEW GRAPH, CHANGE addNode()
         // Hide panels by default
         hideAllPanels();
-        buttons.setDisable(false);
-        buttons.setVisible(true);
+        showMainButtonPanel();
 
         List<Graph> graphs = MapController.getInstance().getGraphs();
         if (!graphs.isEmpty()) {
             this.graph = graphs.getFirst();
+            loadGraph(graph);
         } else {
             this.graph = new Graph(baseNumVertex, IdGenerator.generateId());
         }
-        loadGraph(graph);
     }
 
-    private void enableTripSelection(){
-        selectTrip();
-    }
-
-    @FXML
     private void loadGraph(Graph graph) {
        map.getChildren().clear();
 
@@ -106,9 +103,9 @@ public class graphCreationController {
 
         double x = node.getPosX();
         double y = node.getPosY();
-//txtFld.setLayoutX(x - txtFld.getPrefWidth()/2 + baseRadius);
-//            txtFld.setLayoutY(y - (txtFld.getPrefHeight()/2) - 35);
+
         TextField txtFld = new TextField(node.getNombre());
+        txtFld.setEditable(false);
         txtFld.setPrefWidth(160);
         txtFld.setPrefHeight(20);
         txtFld.setLayoutX(x - txtFld.getPrefWidth()/2 + baseRadius);
@@ -120,6 +117,7 @@ public class graphCreationController {
         txtFld.setFont( Font.font("Inter", FontWeight.BOLD, 18) );
         txtFld.setStyle("-fx-text-fill: white; -fx-alignment: center;");
 
+        buttonTextFieldMap.put(btn, txtFld);
         map.getChildren().add(btn);
         map.getChildren().add(txtFld);
     }
@@ -153,8 +151,7 @@ public class graphCreationController {
         resetBtnStyle();
         resetAllLineColors();
         hideAllPanels();
-        buttons.setVisible(true);
-        buttons.setDisable(false);
+        showMainButtonPanel();
     }
 
     private void hideAllPanels() {
@@ -168,6 +165,8 @@ public class graphCreationController {
         priorityPanel.setDisable(true);
         nodeHandlerPanel.setVisible(false);
         nodeHandlerPanel.setDisable(true);
+        deletePanel.setVisible(false);
+        deletePanel.setDisable(true);
     }
 
     private void showNodeHandlerPanel(){
@@ -175,6 +174,11 @@ public class graphCreationController {
         buttons.setDisable(true);
         nodeHandlerPanel.setVisible(true);
         nodeHandlerPanel.setDisable(false);
+    }
+
+    private void showMainButtonPanel(){
+        buttons.setVisible(true);
+        buttons.setDisable(false);
     }
 
     @FXML
@@ -303,6 +307,7 @@ public class graphCreationController {
             txtFld.setFont( Font.font("Inter", FontWeight.BOLD, 18) );
             txtFld.setStyle("-fx-text-fill: white; -fx-alignment: center;");
 
+            buttonTextFieldMap.put(nodeBtn, txtFld);
             map.getChildren().add(nodeBtn);
             map.getChildren().add(txtFld);
 
@@ -312,7 +317,6 @@ public class graphCreationController {
                 ifGraphNull(graph);
                 if(graph.getNodes() != null) {
                     graph.getNodes().add(new StopNode(idNode, name, x, y));
-                    MapController.getInstance().addGraph(graph);
                     txtFld.setEditable(false);
                 }
             });
@@ -329,12 +333,6 @@ public class graphCreationController {
     private void handleNodeSelection(Button clickedButton){
         if(btn1 == null){
             btn1 = clickedButton;
-            if(deletingMode && btn1 != null){
-                StopNode nodeToDelete = findStopNodeForButton(btn1);
-                graph.removeNode(nodeToDelete);
-                // METODO PARA ELIMINAR: panel con botones para eliminar nodo o eliminar ruta (el de ruta debe abrir
-                // a popup window con una lista de las aristas conectadas a ese nodo
-            }
             btn1.setStyle("-fx-background-radius: 5em; " +
                     "-fx-min-width: 60px; " +
                     "-fx-min-height: 60px; " +
@@ -342,6 +340,11 @@ public class graphCreationController {
                     "-fx-max-height: 60px;" +
                     "-fx-background-color: BLUE;");
 
+            if(deletingMode && btn1 != null){
+                hideAllPanels();
+                deletePanel.setDisable(false);
+                deletePanel.setVisible(true);
+            }
         } else if(btn2 == null && clickedButton != null){
             btn2 = clickedButton;
             btn2.setStyle("-fx-background-radius: 5em; " +
@@ -449,8 +452,7 @@ public class graphCreationController {
         drawLine(btn1,btn2);
         resetBtnStyle();
         hideAllPanels();
-        buttons.setVisible(true);
-        buttons.setDisable(false);
+        showMainButtonPanel();
     }
 
     private void resetBtnStyle(){
@@ -498,7 +500,7 @@ public class graphCreationController {
     }
 
     @FXML
-    private void deleteNode(ActionEvent actionEvent) {
+    private void enableDeleteMode(ActionEvent actionEvent) {
         deletingMode = true;
     }
 
@@ -575,6 +577,66 @@ public class graphCreationController {
                     routeLine.setStrokeWidth(5);
                 }
             }
+        }
+    }
+
+    @FXML
+    private void removeNode(ActionEvent actionEvent) {
+        hideAllPanels();
+        StopNode nodeToRemove = findStopNodeForButton(btn1);
+
+        if(nodeToRemove != null){
+            removeConnectedRoutes(nodeToRemove);
+            graph.removeNode(nodeToRemove);
+
+            TextField txtFldToRemove = buttonTextFieldMap.get(btn1);
+            if(txtFldToRemove != null){
+                map.getChildren().remove(txtFldToRemove);
+            }
+            map.getChildren().remove(btn1);
+            buttonTextFieldMap.remove(btn1);
+        }
+        deletingMode = false;
+        showMainButtonPanel();
+    }
+
+
+    @FXML
+    private void removeRoute(ActionEvent actionEvent) {
+        hideAllPanels();
+        //ADD A CLASS THAT SHOWS A POPUP WITH A LIST OF ALL THE ROUTES CONNECTED TO A BUTTON, THEN DELETE
+        deletingMode = false;
+        showMainButtonPanel();
+    }
+
+    private void removeConnectedRoutes(StopNode nodeToRemove){
+        List<Node> linesToRemove = new ArrayList<>();
+
+        for(Node child : map.getChildren()){
+            if(child instanceof Line){
+                Line line = (Line) child;
+
+                double startX = line.getStartX();
+                double startY = line.getStartY();
+                double endX = line.getEndX();
+                double endY = line.getEndY();
+
+                if ((Math.abs(startX - (nodeToRemove.getPosX() + 60.0 / 2)) < 1e-2 && Math.abs(startY - (nodeToRemove.getPosY() + 60.0 / 2)) < 1e-2) ||
+                        (Math.abs(endX - (nodeToRemove.getPosX() + 60.0 / 2)) < 1e-2 && Math.abs(endY - (nodeToRemove.getPosY() + 60.0 / 2)) < 1e-2)) {
+                    linesToRemove.add(line);  // Add the line to the removal list
+                }
+            }
+        }
+        map.getChildren().removeAll(linesToRemove);
+    }
+
+    @FXML
+    private void saveGraph(ActionEvent actionEvent) {
+        Graph graphToSave = MapController.getInstance().searchGraphById(graph.getGraphId());
+        if(graphToSave != null){
+            MapController.getInstance().updateGraph(graphToSave);
+        } else {
+            MapController.getInstance().addGraph(graph);
         }
     }
 }

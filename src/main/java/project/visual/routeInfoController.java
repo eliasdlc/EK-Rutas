@@ -102,8 +102,6 @@ public class routeInfoController {
             graph.addListAdy(route);
         }
 
-
-
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }

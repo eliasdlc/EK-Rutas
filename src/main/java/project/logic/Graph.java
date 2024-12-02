@@ -207,6 +207,7 @@ public class Graph implements Serializable {
 	            }
 	        }
 	    }
+        nodes.remove(node);
 	    listRoutes.remove(node);
 	}
 

@@ -65,6 +65,13 @@ public class MapController implements Serializable {
         return null;
     }
 
+    public void updateGraph(Graph graph) {
+        int index = graphs.indexOf(graph);
+        if(index != -1) {
+            graphs.set(index, graph);
+        }
+    }
+
     private boolean confirmLogin(String username, String password) {
         boolean login = false;
         for(User user : users) {

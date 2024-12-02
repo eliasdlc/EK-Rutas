@@ -22,8 +22,8 @@
                 </BorderPane.margin>
                 <children>
                     <Button mnemonicParsing="false" onAction="#addNode" text="Agregar Nodo" />
-                    <Button mnemonicParsing="false" text="Eliminar" onAction="#deleteNode"/>
-                    <Button mnemonicParsing="false" text="Guardar" />
+                    <Button mnemonicParsing="false" text="Eliminar" onAction="#enableDeleteMode"/>
+                    <Button mnemonicParsing="false" text="Guardar" onAction="#saveGraph"/>
                 </children>
             </FlowPane>
 
@@ -66,6 +66,13 @@
                     <Button mnemonicParsing="false" text="Costo" onAction="#chooseCosto"/>
                     <Button mnemonicParsing="false" text="Transbordo" onAction="#chooseTransbordo"/>
                 </children>
+            </FlowPane>
+
+            <!-- Deleting Panel-->
+            <FlowPane fx:id="deletePanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
+                      visible="false" disable="true">
+                <Button mnemonicParsing="false" text="Eliminar Nodo" onAction="#removeNode"/>
+                <Button mnemonicParsing="false" text="Eliminar Ruta" onAction="#removeRoute"/>
             </FlowPane>
         </StackPane>
     </right>
