@@ -233,6 +233,20 @@ public class Graph implements Serializable {
   		return listRoutes;
   	}
 
+    public Route findRouteBetweenNodes(StopNode node1, StopNode node2) {
+        // Get the list of routes originating from node1
+        List<Route> routesFromNode1 = listRoutes.get(node1);
+        if (routesFromNode1 != null) {
+            // Loop through the routes and find the one that connects to node2
+            for (Route route : routesFromNode1) {
+                if (route.getDestination().equals(node2) || route.getOrigin().equals(node2)) {
+                    return route;  // Return the route if found
+                }
+            }
+        }
+        return null; // No route found between node1 and node2
+    }
+
     public String getGraphId(){
         return graphId;
     }

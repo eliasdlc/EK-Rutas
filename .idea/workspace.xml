@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Algorithms implemented">
+    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Eliminación de nodos y salvado de grafos">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/EK_Routes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/EK_Routes.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/MapController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/MapController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/routeInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/routeInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" afterDir="false" />
     </list>
@@ -23,10 +23,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="JavaFXApplication" />
         <option value="FxmlFile" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="JavaFXApplication" />
       </list>
     </option>
   </component>
@@ -125,7 +125,8 @@
       <workItem from="1732730159406" duration="49000" />
       <workItem from="1732802784173" duration="8329000" />
       <workItem from="1732891686404" duration="12428000" />
-      <workItem from="1733094222664" duration="8158000" />
+      <workItem from="1733094222664" duration="9076000" />
+      <workItem from="1733225633748" duration="37224000" />
     </task>
     <task id="LOCAL-00001" summary="Algoritmo de Prim para MST">
       <option name="closed" value="true" />
@@ -199,7 +200,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732978078310</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Eliminación de nodos y salvado de grafos">
+      <option name="closed" value="true" />
+      <created>1733109170873</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1733109170873</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +222,7 @@
     <MESSAGE value="routes can now be added in visual" />
     <MESSAGE value="files + login (brother im tired)" />
     <MESSAGE value="Algorithms implemented" />
-    <option name="LAST_COMMIT_MESSAGE" value="Algorithms implemented" />
+    <MESSAGE value="Eliminación de nodos y salvado de grafos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eliminación de nodos y salvado de grafos" />
   </component>
 </project>

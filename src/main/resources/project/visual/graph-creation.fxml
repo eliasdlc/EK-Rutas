@@ -7,6 +7,8 @@
 <?import javafx.scene.layout.Pane?>
 
 <?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TableColumn?>
 <BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.visual.graphCreationController">
 
 	<padding>
@@ -73,6 +75,20 @@
                       visible="false" disable="true">
                 <Button mnemonicParsing="false" text="Eliminar Nodo" onAction="#removeNode"/>
                 <Button mnemonicParsing="false" text="Eliminar Ruta" onAction="#removeRoute"/>
+            </FlowPane>
+
+            <!-- Deleting Routes Panel-->
+            <FlowPane fx:id="deleteRoutePanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
+                      visible="false" disable="true">
+                <TableView fx:id="routesTable" layoutX="20" layoutY="20" prefWidth="396" prefHeight="200">
+                    <columns>
+                        <TableColumn fx:id="nameColumn" text="Nombre" prefWidth="100"/>
+                        <TableColumn fx:id="distanceColumn" text="Distancia" prefWidth="50"/>
+                        <TableColumn fx:id="timeColumn" text="Tiempo" prefWidth="50"/>
+                        <TableColumn fx:id="costColumn" text="Costo" prefWidth="45"/>
+                        <TableColumn fx:id="transpColumn" text="Trasbordo" prefWidth="60"/>
+                    </columns>
+                </TableView>
             </FlowPane>
         </StackPane>
     </right>

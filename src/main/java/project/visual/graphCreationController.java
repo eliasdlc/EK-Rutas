@@ -1,17 +1,17 @@
 package project.visual;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Stop;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
@@ -21,9 +21,10 @@ import javafx.util.Pair;
 import project.logic.*;
 
 import java.io.IOException;
+import java.time.Duration;
 import java.util.*;
 
-public class graphCreationController {
+public class graphCreationController implements View.OnSelectedGraph{
 
     @FXML
     private Pane map;
@@ -39,6 +40,21 @@ public class graphCreationController {
     private FlowPane nodeHandlerPanel;
     @FXML
     private FlowPane deletePanel;
+    @FXML
+    private FlowPane deleteRoutePanel;
+    @FXML
+    private TableView<Route> routesTable;
+    @FXML
+    private TableColumn<Route, String> nameColumn;
+    @FXML
+    private TableColumn<Route, Double> distanceColumn;
+    @FXML
+    private TableColumn<Route, Duration> timeColumn;
+    @FXML
+    private TableColumn<Route, Double> costColumn;
+    @FXML
+    private TableColumn<Route, Integer> transpColumn;
+    private ObservableList<Route> routeList;
     private Graph graph = null;
     private final int baseNumVertex = 10;
     private final int baseRadius = 30;
@@ -48,25 +64,30 @@ public class graphCreationController {
     private boolean prim = false;
     private boolean deletingMode = false;
     private Criteria priority = null;
-    private Map<Button, TextField> buttonTextFieldMap = new HashMap<>();
-    private Set<Pair<StopNode, StopNode>> drawnRoutes = new HashSet<>();
+    private final Map<Button, TextField> buttonTextFieldMap = new HashMap<>();
+    private final Map<Route, Line> routeLineMap = new HashMap<>();
+
+    @Override
+    public void getSelectedGraph(Graph graph) {
+        this.graph = graph;
+    }
 
     @FXML
     private void initialize() {
-        // MUST CALL loadGraph()
-        // IF THE PROGRAM IS RUN FOR THE FIRST TIME (WITH PREVIOUS DATA) LOAD THE FIRST GRAPH
-        // ELSE, LOAD A NEW GRAPH, CHANGE addNode()
-        // Hide panels by default
         hideAllPanels();
         showMainButtonPanel();
 
-        List<Graph> graphs = MapController.getInstance().getGraphs();
-        if (!graphs.isEmpty()) {
-            this.graph = graphs.getFirst();
-            loadGraph(graph);
-        } else {
+        initializeTable();
+
+        if(graph == null){
             this.graph = new Graph(baseNumVertex, IdGenerator.generateId());
         }
+
+        routesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if (newSelection != null) {
+                showDeleteConfirmationDialog(newSelection);
+            }
+        });
     }
 
     private void loadGraph(Graph graph) {
@@ -77,13 +98,12 @@ public class graphCreationController {
        }
 
        for(StopNode node : graph.getListRoutes().keySet()){
-           List<Route> routesFromNode = graph.getRoutesToDestination(node);
+           List<Route> routesFromNode = graph.getListRoutes().get(node);
            for(Route route : routesFromNode){
                StopNode destination = route.getDestination();
                Pair<StopNode,StopNode> routePair = new Pair<>(node,destination);
-               if(!drawnRoutes.contains(routePair) && !drawnRoutes.contains(new Pair<>(destination, node))){
+               if(!routeLineMap.containsKey(route)){
                    addRouteToMap(route);
-                   drawnRoutes.add(routePair);
                }
            }
        }
@@ -136,14 +156,7 @@ public class graphCreationController {
         line.setStrokeWidth(5);
 
         map.getChildren().add(line);
-    }
-
-    @FXML
-    private void selectTrip() {
-        // METHOD FOR SELECTING THE TRIP.
-        // WHEN THE MOUSE HOVERS OVER A NODE, IT CHANGES COLOR. THEN THE USER CLICKS TO SELECT. USER MUST SELECT TWO NODES
-        // THEN BUTTON PANEL MUST CHANGE TO A DIFFERENT PANEL WITH BUTTONS: CHOOSE ALGORITHM, ACCEPT (CHOICE OF PRIORITY),
-        // EXIT (THIS MUST UNSELECT THE NODES)
+        routeLineMap.put(route,line);
     }
 
     @FXML
@@ -167,6 +180,8 @@ public class graphCreationController {
         nodeHandlerPanel.setDisable(true);
         deletePanel.setVisible(false);
         deletePanel.setDisable(true);
+        deleteRoutePanel.setVisible(false);
+        deleteRoutePanel.setDisable(true);
     }
 
     private void showNodeHandlerPanel(){
@@ -177,6 +192,7 @@ public class graphCreationController {
     }
 
     private void showMainButtonPanel(){
+        hideAllPanels();
         buttons.setVisible(true);
         buttons.setDisable(false);
     }
@@ -314,7 +330,6 @@ public class graphCreationController {
             txtFld.requestFocus();
             txtFld.setOnAction(textEvent -> {
                 String name = txtFld.getText();
-                ifGraphNull(graph);
                 if(graph.getNodes() != null) {
                     graph.getNodes().add(new StopNode(idNode, name, x, y));
                     txtFld.setEditable(false);
@@ -392,6 +407,7 @@ public class graphCreationController {
     }
 
     private Line findLineBetweenNodes(StopNode node1, StopNode node2) {
+
         for (Node child : map.getChildren()) {
             if (child instanceof Line) {
                 Line line = (Line) child;
@@ -401,8 +417,8 @@ public class graphCreationController {
                 double endY = line.getEndY();
 
                 // Check if the line connects the two nodes
-                if ((Math.abs(startX - node1.getPosX()) < 1e-2 && Math.abs(endX - node2.getPosX()) < 1e-2) ||
-                        (Math.abs(startX - node2.getPosX()) < 1e-2 && Math.abs(endX - node1.getPosX()) < 1e-2)) {
+                if ((Math.abs(startX - (node1.getPosX()+ 60.0 / 2)) < 1e-2 && Math.abs(startY - (node1.getPosY() + 60.0 / 2)) < 1e-2) ||
+                        (Math.abs(endX - (node1.getPosX() + 60.0 / 2)) < 1e-2 && Math.abs(endY - (node1.getPosY() + 60.0 / 2)) < 1e-2)) {
                     return line;
                 }
             }
@@ -429,7 +445,6 @@ public class graphCreationController {
         }
     }
 
-    //IM GETTING A NullPointerException HERE, FIX LATER
     private void drawLine(Button btn1, Button btn2){
         Line line = new Line();
         line.setStartX(btn1.getLayoutX() + btn1.getWidth() / 2);
@@ -456,24 +471,28 @@ public class graphCreationController {
     }
 
     private void resetBtnStyle(){
-        btn1.setStyle("-fx-background-radius: 5em; " +
-                "-fx-min-width: 60px; " +
-                "-fx-min-height: 60px; " +
-                "-fx-max-width: 60px; " +
-                "-fx-max-height: 60px;" +
-                "-fx-background-color: WHITE;");
-        btn2.setStyle("-fx-background-radius: 5em; " +
-                "-fx-min-width: 60px; " +
-                "-fx-min-height: 60px; " +
-                "-fx-max-width: 60px; " +
-                "-fx-max-height: 60px;" +
-                "-fx-background-color: WHITE;");
+        if(btn1 != null){
+            btn1.setStyle("-fx-background-radius: 5em; " +
+                    "-fx-min-width: 60px; " +
+                    "-fx-min-height: 60px; " +
+                    "-fx-max-width: 60px; " +
+                    "-fx-max-height: 60px;" +
+                    "-fx-background-color: WHITE;");
+        }
+        if(btn2 != null){
+            btn2.setStyle("-fx-background-radius: 5em; " +
+                    "-fx-min-width: 60px; " +
+                    "-fx-min-height: 60px; " +
+                    "-fx-max-width: 60px; " +
+                    "-fx-max-height: 60px;" +
+                    "-fx-background-color: WHITE;");
+        }
         btn1 = null;
         btn2 = null;
     }
 
     private void resetAllLineColors() {
-        // Iterate through all the children of the map pane
+
         for (Node node : map.getChildren()) {
             // Check if the node is a Line object
             if (node instanceof Line) {
@@ -546,10 +565,14 @@ public class graphCreationController {
                         "-fx-background-color: ORANGE;");
             }
 
-            Line routeLine = findLineBetweenNodes(origin,destination);
-            if(routeLine != null){
-                routeLine.setStroke(javafx.scene.paint.Color.ORANGE);
-                routeLine.setStrokeWidth(5);
+            Route routeToHighlight = graph.findRouteBetweenNodes(origin,destination);
+            //Line routeLine = findLineBetweenNodes(origin,destination);
+            if(routeToHighlight != null){
+                Line routeLine = routeLineMap.get(routeToHighlight);
+                if(routeLine != null){
+                    routeLine.setStroke(javafx.scene.paint.Color.ORANGE);
+                    routeLine.setStrokeWidth(5);
+                }
             }
         }
     }
@@ -571,10 +594,13 @@ public class graphCreationController {
 
             if(i < path.size() - 1){
                 StopNode nextNode = path.get(i + 1);
-                Line routeLine = findLineBetweenNodes(currentNode, nextNode);
-                if(routeLine != null){
-                    routeLine.setStroke(javafx.scene.paint.Color.GREEN);
-                    routeLine.setStrokeWidth(5);
+                Route route = graph.findRouteBetweenNodes(currentNode,nextNode);
+                if(route != null){
+                    Line routeLine = routeLineMap.get(route);
+                    if(routeLine != null){
+                        routeLine.setStroke(Color.GREEN);
+                        routeLine.setStrokeWidth(5.0);
+                    }
                 }
             }
         }
@@ -600,13 +626,38 @@ public class graphCreationController {
         showMainButtonPanel();
     }
 
-
     @FXML
     private void removeRoute(ActionEvent actionEvent) {
         hideAllPanels();
-        //ADD A CLASS THAT SHOWS A POPUP WITH A LIST OF ALL THE ROUTES CONNECTED TO A BUTTON, THEN DELETE
-        deletingMode = false;
-        showMainButtonPanel();
+        deleteRoutePanel.setVisible(true);
+        deleteRoutePanel.setDisable(false);
+
+        StopNode node = findStopNodeForButton(btn1);
+        displayRoutes(node);
+
+        if(!deletingMode) {
+            showMainButtonPanel();
+        }
+    }
+
+    private void initializeTable(){
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        distanceColumn.setCellValueFactory(new PropertyValueFactory<>("distance"));
+        timeColumn.setCellValueFactory(new PropertyValueFactory<>("time"));
+        costColumn.setCellValueFactory(new PropertyValueFactory<>("cost"));
+        transpColumn.setCellValueFactory(new PropertyValueFactory<>("trasbordo"));
+
+        routeList = FXCollections.observableArrayList();
+        routesTable.setItems(routeList);
+    }
+
+    private void displayRoutes(StopNode node){
+        if(node == null){ return; }
+        routeList.clear();
+        List<Route> adjacentRoutes = graph.getListRoutes().get(node);
+        if(adjacentRoutes != null && !adjacentRoutes.isEmpty()){
+            routeList.addAll(adjacentRoutes);
+        }
     }
 
     private void removeConnectedRoutes(StopNode nodeToRemove){
@@ -628,6 +679,30 @@ public class graphCreationController {
             }
         }
         map.getChildren().removeAll(linesToRemove);
+    }
+
+    private void showDeleteConfirmationDialog(Route route){
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmar");
+        alert.setHeaderText("¿Está seguro de que quiere eliminar esta ruta?");
+        alert.setContentText("Route: " + route.getName());
+
+        Optional<ButtonType> result = alert.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            deleteRoute(route);
+            resetBtnStyle();
+            showMainButtonPanel();
+        }
+    }
+
+    private void deleteRoute(Route route){
+        graph.removeRoute(route);
+        Line routeLine = routeLineMap.get(route);
+        if(routeLine != null){
+            map.getChildren().remove(routeLine);
+            routeLineMap.remove(route);
+        }
+        deletingMode = false;
     }
 
     @FXML
