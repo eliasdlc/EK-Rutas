@@ -90,7 +90,7 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
         });
     }
 
-    private void loadGraph(Graph graph) {
+    void loadGraph(Graph graph) {
        map.getChildren().clear();
 
        for(StopNode node : graph.getNodes()){

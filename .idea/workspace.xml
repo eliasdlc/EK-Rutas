@@ -4,15 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Eliminación de nodos y salvado de grafos">
+    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Login visual remastered + added name to graphs">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/StatisticsWindow.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/GraphStatistics.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/History.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/NotifType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/HistoryComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/Notification.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/StatisticsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/StatisticsWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/ViewWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/ViewWindowController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/history.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/notification.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/statistics-window.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/statistics.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/view-window.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/view-window.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EK_Routes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/EK_Routes.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/MainWindowController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/View.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/main-window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/main-window.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,10 +38,10 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="FxmlFile" />
-        <option value="CSS File" />
-        <option value="Class" />
         <option value="JavaFXApplication" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -56,32 +71,39 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="2olFfLoJWgGoYFTI8H3lwiYHdY3" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.HelloApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Login.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainWindow.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Test.executor&quot;: &quot;Run&quot;,
-    &quot;Application.graphCreation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.routeInfo.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/elias/dev/java-projects/EK-Rutas/src/main/resources/project/visual&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.HelloApplication.executor": "Run",
+    "Application.Login.executor": "Run",
+    "Application.MainWindow.executor": "Run",
+    "Application.MapController.executor": "Run",
+    "Application.StatisticsWindow.executor": "Run",
+    "Application.Test.executor": "Run",
+    "Application.ViewWindow.executor": "Run",
+    "Application.graphCreation.executor": "Run",
+    "Application.routeInfo.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/elias/dev/java-projects/EK-Rutas/src/main/resources/project/visual",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\resources\project\visual" />
@@ -93,6 +115,31 @@
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\java\project\visual" />
       <recent name="C:\Users\elias\dev\java-projects\EK-Rutas\src\main\resources" />
     </key>
+  </component>
+  <component name="RunManager" selected="Application.Login">
+    <configuration name="MapController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="project.logic.MapController" />
+      <module name="EK-Rutas" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="project.logic.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Login" />
+      <item itemvalue="Application.StatisticsWindow" />
+      <item itemvalue="Application.MapController" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.MapController" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -125,8 +172,7 @@
       <workItem from="1732730159406" duration="49000" />
       <workItem from="1732802784173" duration="8329000" />
       <workItem from="1732891686404" duration="12428000" />
-      <workItem from="1733094222664" duration="9076000" />
-      <workItem from="1733225633748" duration="37224000" />
+      <workItem from="1733094222664" duration="8158000" />
     </task>
     <task id="LOCAL-00001" summary="Algoritmo de Prim para MST">
       <option name="closed" value="true" />
@@ -200,13 +246,13 @@
       <option name="project" value="LOCAL" />
       <updated>1732978078310</updated>
     </task>
-    <task id="LOCAL-00010" summary="Eliminación de nodos y salvado de grafos">
+    <task id="LOCAL-00010" summary="Login visual remastered + added name to graphs">
       <option name="closed" value="true" />
-      <created>1733109170873</created>
+      <created>1733400020257</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1733109170873</updated>
+      <updated>1733400020257</updated>
     </task>
     <option name="localTasksCounter" value="11" />
     <servers />
@@ -222,7 +268,12 @@
     <MESSAGE value="routes can now be added in visual" />
     <MESSAGE value="files + login (brother im tired)" />
     <MESSAGE value="Algorithms implemented" />
-    <MESSAGE value="Eliminación de nodos y salvado de grafos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eliminación de nodos y salvado de grafos" />
+    <MESSAGE value="Login visual remastered + added name to graphs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Login visual remastered + added name to graphs" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/EK_Rutas$StatisticsWindow.ic" NAME="StatisticsWindow Coverage Results" MODIFIED="1733366590487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>project.visual.*</FILTER>
+    </SUITE>
   </component>
 </project>

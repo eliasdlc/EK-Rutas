@@ -55,6 +55,23 @@ public class MainWindowController {
 	}
 
     @FXML
+    public void changeToViewGraphs(ActionEvent e) throws IOException{
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("view-window.fxml"));
+        stage = (Stage)((Node)e.getSource()).getScene().getWindow();
+
+
+        scene = new Scene(fxmlLoader.load());
+        String css = Objects.requireNonNull(this.getClass().getResource("view-window.css")).toExternalForm();
+        addStyling(css);
+
+        //stage.setMaximized(true);
+        stage.setTitle("Options");
+        stage.centerOnScreen();
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     public void changeToOptions(ActionEvent e) throws IOException{
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("option-window.fxml"));
         stage = (Stage)((Node)e.getSource()).getScene().getWindow();
