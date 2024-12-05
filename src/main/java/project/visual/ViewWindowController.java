@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.HPos;
+import javafx.geometry.Insets;
 import javafx.geometry.Rectangle2D;
 import javafx.geometry.VPos;
 import javafx.scene.Node;
@@ -14,6 +15,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ContextMenu;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
@@ -27,6 +29,7 @@ import project.logic.Route;
 import project.logic.StopNode;
 
 import java.io.IOException;
+import java.security.cert.PolicyNode;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -45,7 +48,11 @@ public class ViewWindowController {
     private FlowPane grafoList;
 
     @FXML
+    private FlowPane actionButtons;
+
+    @FXML
     private void initialize() {
+
         List<Graph> graphs = MapController.getInstance().getGraphs(); // Aqui seria poner esto despues de terminar el test
                                              // MapController.getInstance().getGraphs();
 
@@ -239,7 +246,6 @@ public class ViewWindowController {
         }
     }
 
-
     public void addStyling(String css) {
         scene.getStylesheets().add(css);
 
@@ -249,77 +255,6 @@ public class ViewWindowController {
         stage.setY(bounds.getMinY());
         stage.setWidth(bounds.getWidth());
         stage.setHeight(bounds.getHeight());
-    }
-
-
-    public List<Graph> genTestGraphs() {
-        Graph graph1 = new Graph(10, "1","graph1");
-        Graph graph2 = new Graph(15, "1","graph2");
-        Graph graph3 = new Graph(20, "1","graph3");
-
-        // Configurar nodos y rutas para graph1
-        List<StopNode> nodes1 = new ArrayList<>();
-        nodes1.add(new StopNode("N1", "A", 1.0, 1.0));
-        nodes1.add(new StopNode("N2", "B", 2.0, 1.5));
-        nodes1.add(new StopNode("N3", "C", 3.0, 3.0));
-        nodes1.add(new StopNode("N4", "D", 4.0, 2.0));
-        nodes1.add(new StopNode("N5", "E", 5.0, 4.0));
-
-        HashMap<StopNode, List<Route>> routes1 = new HashMap<>();
-        routes1.put(nodes1.get(0), List.of(
-                new Route(nodes1.get(0), nodes1.get(1), "Route1-AB", 1.5, Duration.ofMinutes(5), 1.0, 0),
-                new Route(nodes1.get(0), nodes1.get(2), "Route1-AC", 2.0, Duration.ofMinutes(7), 1.5, 0)
-        ));
-        routes1.put(nodes1.get(1), List.of(
-                new Route(nodes1.get(1), nodes1.get(3), "Route1-BD", 1.8, Duration.ofMinutes(6), 1.2, 1)
-        ));
-        routes1.put(nodes1.get(2), List.of(
-                new Route(nodes1.get(2), nodes1.get(4), "Route1-CE", 2.5, Duration.ofMinutes(8), 2.0, 1)
-        ));
-
-        graph1.setNodes(nodes1);
-        graph1.setListRoutes(routes1);
-
-        // Configurar nodos y rutas para graph2
-        List<StopNode> nodes2 = new ArrayList<>();
-        for (int i = 1; i <= 15; i++) {
-            nodes2.add(new StopNode("N" + i, "Node " + i, i * 1.5, i * 1.2));
-        }
-
-        HashMap<StopNode, List<Route>> routes2 = new HashMap<>();
-        for (int i = 0; i < nodes2.size() - 1; i++) {
-            StopNode origin = nodes2.get(i);
-            StopNode destination = nodes2.get(i + 1);
-            routes2.putIfAbsent(origin, new ArrayList<>());
-            routes2.get(origin).add(new Route(origin, destination, "Route2-" + origin.getNombre() + "-" + destination.getNombre(),
-                    2.0 + i, Duration.ofMinutes(5 + i), 1.5 + i * 0.2, i % 2));
-        }
-
-        graph2.setNodes(nodes2);
-        graph2.setListRoutes(routes2);
-
-        // Configurar nodos y rutas para graph3
-        List<StopNode> nodes3 = new ArrayList<>();
-        for (int i = 1; i <= 20; i++) {
-            nodes3.add(new StopNode("N" + i, "Node " + i, i * 2.0, i * 2.5));
-        }
-
-        HashMap<StopNode, List<Route>> routes3 = new HashMap<>();
-        for (int i = 0; i < nodes3.size() - 2; i++) {
-            StopNode origin = nodes3.get(i);
-            StopNode destination1 = nodes3.get(i + 1);
-            StopNode destination2 = nodes3.get(i + 2);
-            routes3.putIfAbsent(origin, new ArrayList<>());
-            routes3.get(origin).add(new Route(origin, destination1, "Route3-" + origin.getNombre() + "-" + destination1.getNombre(),
-                    3.0 + i, Duration.ofMinutes(6 + i), 2.0 + i * 0.3, i % 3));
-            routes3.get(origin).add(new Route(origin, destination2, "Route3-" + origin.getNombre() + "-" + destination2.getNombre(),
-                    4.0 + i, Duration.ofMinutes(7 + i), 2.5 + i * 0.3, (i + 1) % 3));
-        }
-
-        graph3.setNodes(nodes3);
-        graph3.setListRoutes(routes3);
-
-        return List.of(graph1, graph2, graph3);
     }
 
 }

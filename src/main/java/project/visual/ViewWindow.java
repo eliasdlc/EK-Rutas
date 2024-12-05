@@ -14,6 +14,7 @@ public class ViewWindow extends Application {
     public static void main(String[] args) {
         launch(args);
     }
+
     public interface OnSelectedGraph{
         void getSelectedGraph(Graph graph);
     }

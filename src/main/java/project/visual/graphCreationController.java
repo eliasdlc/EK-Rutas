@@ -91,6 +91,7 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
     }
 
     void loadGraph(Graph graph) {
+        this.graph = graph;
        map.getChildren().clear();
 
        for(StopNode node : graph.getNodes()){
@@ -100,16 +101,21 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
        for(StopNode node : graph.getListRoutes().keySet()){
            List<Route> routesFromNode = graph.getListRoutes().get(node);
            for(Route route : routesFromNode){
-               StopNode destination = route.getDestination();
-               Pair<StopNode,StopNode> routePair = new Pair<>(node,destination);
                if(!routeLineMap.containsKey(route)){
                    addRouteToMap(route);
                }
            }
        }
+
+
     }
 
     private void addNodeToMap(StopNode node) {
+        // Verificar si el nodo ya está presente en el mapa
+        if (buttonTextFieldMap.containsKey(node)) {
+            return; // Si el nodo ya está en el mapa, no agregarlo
+        }
+
         Button btn = new Button();
         btn.setLayoutX(node.getPosX());
         btn.setLayoutY(node.getPosY());
@@ -137,12 +143,22 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
         txtFld.setFont( Font.font("Inter", FontWeight.BOLD, 18) );
         txtFld.setStyle("-fx-text-fill: white; -fx-alignment: center;");
 
+        btn.setViewOrder(0);
+
+        System.out.println("Node: " + node.getNombre() + " X: " + x + " Y: " + y);
+
+
         buttonTextFieldMap.put(btn, txtFld);
         map.getChildren().add(btn);
         map.getChildren().add(txtFld);
     }
 
+
     private void addRouteToMap(Route route) {
+        if (routeLineMap.containsKey(route)) {
+            return; // Si la ruta ya está en el mapa, no agregarla
+        }
+
         StopNode origin = route.getOrigin();
         StopNode dest = route.getDestination();
 
@@ -155,8 +171,12 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
         line.setStroke(Color.WHITE);
         line.setStrokeWidth(5);
 
+        line.setViewOrder(-1);
+
         map.getChildren().add(line);
         routeLineMap.put(route,line);
+
+        System.out.println("Route: " + route.getName() + " Origin: " + origin.getNombre() + " Destination: " + dest.getNombre());
     }
 
     @FXML
@@ -456,6 +476,8 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
         line.setStroke(javafx.scene.paint.Color.WHITE);
         line.setStrokeWidth(5);
 
+        line.setViewOrder(-1);
+
         map.getChildren().add(line);
     }
 
@@ -529,9 +551,12 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
         StopNode node1 = findStopNodeForButton(btn1);
         StopNode node2 = findStopNodeForButton(btn2);
         if(dijkstra){
+            System.out.println("pan");
             List<StopNode> shortestPath = graph.dijkstraShortestPath(node1,node2,priority);
+
             if(shortestPath != null && !shortestPath.isEmpty()){
                 highlightPath(shortestPath);
+                System.out.println("queso");
             }
         } else if(prim){
             List<Route> mstRoutes = graph.primMST(node1,priority);
@@ -566,7 +591,6 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
             }
 
             Route routeToHighlight = graph.findRouteBetweenNodes(origin,destination);
-            //Line routeLine = findLineBetweenNodes(origin,destination);
             if(routeToHighlight != null){
                 Line routeLine = routeLineMap.get(routeToHighlight);
                 if(routeLine != null){

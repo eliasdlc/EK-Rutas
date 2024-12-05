@@ -185,38 +185,57 @@ public class Graph implements Serializable {
         };
     }
 
-	public void addNodeAdyList(StopNode node) {
-	    if (!listRoutes.containsKey(node)) {
-	        listRoutes.put(node, new ArrayList<>());
-	    }
-	}
-
-	public void addListAdy(Route route) {
-        addNodeAdyList(route.getOrigin());
-        addNodeAdyList(route.getDestination());
-
-        getListRoutes().get(route.getOrigin()).add(route);
-        getListRoutes().get(route.getDestination()).add(route);
+    public void addNodeAdyList(StopNode node) {
+        if (!listRoutes.containsKey(node)) {
+            listRoutes.put(node, new ArrayList<>());
+            nodes.add(node);
+        }
     }
 
-	public void removeRoute(Route route) {
-	    StopNode origin = route.getOrigin();
-	    StopNode destination = route.getDestination();
+    public void addListAdy(Route route) {
+        // Asegurarse de que las listas de adyacencia existan para los nodos de origen y destino
+        getListRoutes().putIfAbsent(route.getOrigin(), new ArrayList<>());
+        getListRoutes().putIfAbsent(route.getDestination(), new ArrayList<>());
 
-	    // para nodo origen
-	    List<Route> originRoutes = listRoutes.get(origin);
-	    if (originRoutes != null) {
-	        originRoutes.remove(route);
-	    }
+        // Agregar la ruta original al nodo de origen
+        getListRoutes().get(route.getOrigin()).add(route);
 
-	    // para nodo destino
-	    List<Route> destinationRoutes = listRoutes.get(destination);
-	    if (destinationRoutes != null) {
-	        destinationRoutes.remove(route);
-	    }
-	}
-	
-	public void removeNode(StopNode node) {
+        // Agregar la ruta inversa al nodo de destino
+        Route reverseRoute = new Route(
+                route.getDestination(),
+                route.getOrigin(),
+                route.getName(),
+                route.getDistance(),
+                route.getTime(),
+                route.getCost(),
+                route.getTrasbordo()
+        );
+        getListRoutes().get(route.getDestination()).add(reverseRoute);
+    }
+
+
+
+    public void removeRoute(Route route) {
+        StopNode origin = route.getOrigin();
+        StopNode destination = route.getDestination();
+
+        // Para nodo origen
+        List<Route> originRoutes = listRoutes.get(origin);
+        if (originRoutes != null) {
+            originRoutes.remove(route);
+            System.out.println("Ruta eliminada del origen: " + route);
+        }
+
+        // Para nodo destino
+        List<Route> destinationRoutes = listRoutes.get(destination);
+        if (destinationRoutes != null) {
+            destinationRoutes.remove(route);
+            System.out.println("Ruta eliminada del destino: " + route);
+        }
+    }
+
+
+    public void removeNode(StopNode node) {
 	    List<Route> routesToRemove = listRoutes.get(node);
 	    
 	    if (routesToRemove != null) {

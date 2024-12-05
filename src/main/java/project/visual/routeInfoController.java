@@ -92,11 +92,14 @@ public class routeInfoController {
     public void setBtnOk(ActionEvent event) {
         double distance = spnDistance.getValue();
         double cost = spnCost.getValue();
+
         int hours = spnHours.getValue();
         int minutes = spnMinutes.getValue();
         int transports = spnTransport.getValue();
+
         String name = txtName.getText();
         Duration totalTime = Duration.ofHours(hours).plusMinutes(minutes);
+
         if(graph!=null && originNode!=null && destNode!=null && name!=null) {
             Route route = new Route(originNode,destNode,name,distance,totalTime,cost,transports);
             graph.addListAdy(route);
