@@ -185,13 +185,6 @@ public class Graph implements Serializable {
         };
     }
 
-    public void addNodeAdyList(StopNode node) {
-        if (!listRoutes.containsKey(node)) {
-            listRoutes.put(node, new ArrayList<>());
-            nodes.add(node);
-        }
-    }
-
     public void addListAdy(Route route) {
         // Asegurarse de que las listas de adyacencia existan para los nodos de origen y destino
         getListRoutes().putIfAbsent(route.getOrigin(), new ArrayList<>());
@@ -251,24 +244,6 @@ public class Graph implements Serializable {
         nodes.remove(node);
 	    listRoutes.remove(node);
 	}
-
-    public StopNode searchNodeById(String id) {
-        for(StopNode aux : listRoutes.keySet()) {
-            if(aux.getIdNodo().equals(id)) {
-                return aux;
-            }
-        }
-        return null;
-    }
-
-    public List<StopNode> getAdjacentDestinations(){
-        return new ArrayList<>(listRoutes.keySet());
-    }
-
-    //si no hay Routes devuelve una lista vacia
-    public List<Route> getRoutesToDestination(StopNode dest){
-        return listRoutes.getOrDefault(dest, new ArrayList<>());
-    }
     
     public HashMap<StopNode, List<Route>> getListRoutes() {
   		return listRoutes;

@@ -2,13 +2,13 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.Pane?>
-
 <?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TableColumn?>
+
 <BorderPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project.visual.graphCreationController">
 
 	<padding>
@@ -23,70 +23,64 @@
                     <Insets bottom="0" left="10" right="0" top="0" />
                 </BorderPane.margin>
                 <children>
-                    <Button mnemonicParsing="false" onAction="#addNode" text="Agregar Nodo" />
-                    <Button mnemonicParsing="false" text="Eliminar" onAction="#enableDeleteMode"/>
-                    <Button mnemonicParsing="false" text="Guardar" onAction="#saveGraph"/>
+                    <Button fx:id="addNodeBtn" mnemonicParsing="false" onAction="#addNode" prefHeight="90.0" prefWidth="396.0" text="Agregar Nodo" />
+                    <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#enableDeleteMode" prefHeight="90.0" prefWidth="396.0" text="Eliminar" />
+                    <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveGraph" prefHeight="90.0" prefWidth="396.0" text="Guardar" />
                 </children>
             </FlowPane>
 
             <!-- Trip Panel -->
-            <FlowPane fx:id="tripPanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
-                      visible="false" disable="true" style="-fx-background-color: #2A2A2A;">
+            <FlowPane fx:id="tripPanel" disable="true" prefHeight="690" prefWidth="396" style="-fx-background-color: #2A2A2A;" visible="false" BorderPane.alignment="CENTER">
                 <children>
-                    <Button mnemonicParsing="false" text="Escoger Algoritmo" onAction="#showAlgorithmPanel"/>
-                    <Button mnemonicParsing="false" text="Escoger Prioridad" onAction="#showPriorityPanel"/>
-                    <Button mnemonicParsing="false" text="Encontrar" onAction="#findWay"/>
-                    <Button mnemonicParsing="false" text="Exit" onAction="#exitTripSelection"/>
+                    <Button mnemonicParsing="false" onAction="#showAlgorithmPanel" text="Escoger Algoritmo" />
+                    <Button mnemonicParsing="false" onAction="#showPriorityPanel" text="Escoger Prioridad" />
+                    <Button mnemonicParsing="false" onAction="#findWay" text="Encontrar" />
+                    <Button mnemonicParsing="false" onAction="#exitTripSelection" text="Exit" />
                 </children>
             </FlowPane>
 
             <!-- Node handler panel-->
-            <FlowPane fx:id="nodeHandlerPanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
-                      visible="false" disable="true" >
+            <FlowPane fx:id="nodeHandlerPanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
                 <children>
-                    <Button mnemonicParsing="false" text="Agregar Ruta" onAction="#addRoute"/>
-                    <Button mnemonicParsing="false" text="Encontrar Camino" onAction="#showTripPanel"/>
+                    <Button mnemonicParsing="false" onAction="#addRoute" text="Agregar Ruta" />
+                    <Button mnemonicParsing="false" onAction="#showTripPanel" text="Encontrar Camino" />
                 </children>
             </FlowPane>
 
             <!-- Algorithm Panel -->
-            <FlowPane fx:id="algorithmPanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
-                      visible="false" disable="true">
+            <FlowPane fx:id="algorithmPanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
                 <children>
-                    <Button mnemonicParsing="false" text="Dijkstra" onAction="#chooseDijkstra"/>
-                    <Button mnemonicParsing="false" text="Prim MST" onAction="#choosePrim"/>
+                    <Button mnemonicParsing="false" onAction="#chooseDijkstra" text="Dijkstra" />
+                    <Button mnemonicParsing="false" onAction="#choosePrim" text="Prim MST" />
                 </children>
             </FlowPane>
 
             <!-- Priority Panel -->
-            <FlowPane fx:id="priorityPanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
-                      visible="false" disable="true">
+            <FlowPane fx:id="priorityPanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
                 <children>
-                    <Button mnemonicParsing="false" text="General" onAction="#chooseGeneral"/>
-                    <Button mnemonicParsing="false" text="Distancia" onAction="#chooseDistancia"/>
-                    <Button mnemonicParsing="false" text="Tiempo" onAction="#chooseTiempo"/>
-                    <Button mnemonicParsing="false" text="Costo" onAction="#chooseCosto"/>
-                    <Button mnemonicParsing="false" text="Transbordo" onAction="#chooseTransbordo"/>
+                    <Button mnemonicParsing="false" onAction="#chooseGeneral" text="General" />
+                    <Button mnemonicParsing="false" onAction="#chooseDistancia" text="Distancia" />
+                    <Button mnemonicParsing="false" onAction="#chooseTiempo" text="Tiempo" />
+                    <Button mnemonicParsing="false" onAction="#chooseCosto" text="Costo" />
+                    <Button mnemonicParsing="false" onAction="#chooseTransbordo" text="Transbordo" />
                 </children>
             </FlowPane>
 
             <!-- Deleting Panel-->
-            <FlowPane fx:id="deletePanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
-                      visible="false" disable="true">
-                <Button mnemonicParsing="false" text="Eliminar Nodo" onAction="#removeNode"/>
-                <Button mnemonicParsing="false" text="Eliminar Ruta" onAction="#removeRoute"/>
+            <FlowPane fx:id="deletePanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
+                <Button mnemonicParsing="false" onAction="#removeNode" text="Eliminar Nodo" />
+                <Button mnemonicParsing="false" onAction="#removeRoute" text="Eliminar Ruta" />
             </FlowPane>
 
             <!-- Deleting Routes Panel-->
-            <FlowPane fx:id="deleteRoutePanel" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER"
-                      visible="false" disable="true">
-                <TableView fx:id="routesTable" layoutX="20" layoutY="20" prefWidth="396" prefHeight="200">
+            <FlowPane fx:id="deleteRoutePanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
+                <TableView fx:id="routesTable" layoutX="20" layoutY="20" prefHeight="200" prefWidth="396">
                     <columns>
-                        <TableColumn fx:id="nameColumn" text="Nombre" prefWidth="100"/>
-                        <TableColumn fx:id="distanceColumn" text="Distancia" prefWidth="50"/>
-                        <TableColumn fx:id="timeColumn" text="Tiempo" prefWidth="50"/>
-                        <TableColumn fx:id="costColumn" text="Costo" prefWidth="45"/>
-                        <TableColumn fx:id="transpColumn" text="Trasbordo" prefWidth="60"/>
+                        <TableColumn fx:id="nameColumn" prefWidth="100" text="Nombre" />
+                        <TableColumn fx:id="distanceColumn" prefWidth="50" text="Distancia" />
+                        <TableColumn fx:id="timeColumn" prefWidth="50" text="Tiempo" />
+                        <TableColumn fx:id="costColumn" prefWidth="45" text="Costo" />
+                        <TableColumn fx:id="transpColumn" prefWidth="60" text="Trasbordo" />
                     </columns>
                 </TableView>
             </FlowPane>

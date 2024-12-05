@@ -50,3 +50,18 @@ root {
 	-fx-background-color: "2A2A2A";
 	-fx-background-radius: 32;
 }
+
+#addNodeBtn {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 5.0%, #efa8e5 15.0%, #f372ef 80.0%);
+	-fx-font-size: 20;
+}
+
+#deleteBtn {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 3.0%, #efa8e5 7.0%, #f372ef 90.0%);
+	-fx-font-size: 20;
+}
+
+#saveBtn {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 3.0%, #efa8e5 7.0%, #f372ef 90.0%);
+	-fx-font-size: 20;
+}

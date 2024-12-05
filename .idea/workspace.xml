@@ -4,29 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Add View Window, to show all the graphs.">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations/StatisticsWindow.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/GraphStatistics.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/History.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/logic/NotifType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/HistoryComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/Notification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/StatisticsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/project/visual/StatisticsWindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/history.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/notification.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/statistics-window.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/project/visual/statistics.css" afterDir="false" />
+    <list default="true" id="23597b99-55e4-4256-96d4-a4fb13d39def" name="Changes" comment="Login visual remastered + added name to graphs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EK_Routes.dat" beforeDir="false" afterPath="$PROJECT_DIR$/EK_Routes.dat" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/logic/Graph.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/ViewWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/ViewWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/ViewWindowController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/ViewWindowController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/graphCreationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/project/visual/routeInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/project/visual/routeInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/view-window.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/view-window.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graph-creation.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/project/visual/graphCreation.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,12 +36,12 @@
     &quot;assignee&quot;: &quot;kamiflowerf&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "git@github.com:eliasdlc/EK-Rutas.git",
-    "accountId": "361e4995-fbd6-43e4-97f3-63be1650606f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/eliasdlc/EK-Rutas.git&quot;,
+    &quot;accountId&quot;: &quot;d3dae09d-acdf-4f51-b6a4-87379a218772&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -131,7 +114,6 @@
     </configuration>
     <list>
       <item itemvalue="Application.Login" />
-      <item itemvalue="Application.StatisticsWindow" />
       <item itemvalue="Application.MapController" />
     </list>
     <recent_temporary>
@@ -143,8 +125,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.18034.62" />
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.18034.62" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.227" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.227" />
       </set>
     </attachedChunks>
   </component>
@@ -172,7 +154,6 @@
       <workItem from="1732802784173" duration="8329000" />
       <workItem from="1732891686404" duration="12428000" />
       <workItem from="1733094222664" duration="8158000" />
-      <workItem from="1733409061777" duration="7790000" />
     </task>
     <task id="LOCAL-00001" summary="Algoritmo de Prim para MST">
       <option name="closed" value="true" />
@@ -254,15 +235,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733400020257</updated>
     </task>
-    <task id="LOCAL-00011" summary="Add View Window, to show all the graphs.">
-      <option name="closed" value="true" />
-      <created>1733402886722</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1733402886722</updated>
-    </task>
-    <option name="localTasksCounter" value="12" />
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -277,8 +250,7 @@
     <MESSAGE value="files + login (brother im tired)" />
     <MESSAGE value="Algorithms implemented" />
     <MESSAGE value="Login visual remastered + added name to graphs" />
-    <MESSAGE value="Add View Window, to show all the graphs." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add View Window, to show all the graphs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Login visual remastered + added name to graphs" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/EK_Rutas$StatisticsWindow.ic" NAME="StatisticsWindow Coverage Results" MODIFIED="1733366590487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true">

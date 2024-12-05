@@ -17,7 +17,6 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.util.Pair;
 import project.logic.*;
 
 import java.io.IOException;
@@ -392,9 +391,12 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
             if(btn1 != null && btn2 != null){
                 StopNode node1 = findStopNodeForButton(btn1);
                 StopNode node2 = findStopNodeForButton(btn2);
-
                 if(node1 != null && node2 != null){
+                    System.out.println(node1.getNombre());
+                    System.out.println(node2.getNombre());
                     showNodeHandlerPanel();
+                } else {
+                    System.out.println("No nodes found");
                 }
             }
         }
