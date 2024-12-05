@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.*;
 
-public class graphCreationController implements View.OnSelectedGraph{
+public class graphCreationController implements ViewWindow.OnSelectedGraph{
 
     @FXML
     private Pane map;
@@ -80,7 +80,7 @@ public class graphCreationController implements View.OnSelectedGraph{
         initializeTable();
 
         if(graph == null){
-            this.graph = new Graph(baseNumVertex, IdGenerator.generateId());
+            this.graph = new Graph(baseNumVertex, IdGenerator.generateId(), "Nuevo Grafo");
         }
 
         routesTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
@@ -341,7 +341,7 @@ public class graphCreationController implements View.OnSelectedGraph{
     private void ifGraphNull(Graph graph){
         if(graph == null){
             String idGraph = IdGenerator.generateId();
-            this.graph = new Graph(baseNumVertex, idGraph);
+            this.graph = new Graph(baseNumVertex, idGraph, "Nuevo Grafo");
         }
     }
 

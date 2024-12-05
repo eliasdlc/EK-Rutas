@@ -1,4 +1,153 @@
-#anchor{
-    -fx-background-color: "#454545";
+#background{
+    -fx-background-color: #2A2A2A;
+    -fx-background-radius: 16;
 }
 
+
+AnchorPane {
+    -fx-background-color: transparent; /* Fondo transparente en la ventana */
+    -fx-border-radius: 16; /* Borde redondeado */
+}
+
+#logInPane {
+    -fx-background-color: #454545;
+    -fx-background-radius: 32;
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.50), 16, 0, 0, 0);
+    -fx-border-color: #07bbff; /* Conecta con la pestaña seleccionada */
+    -fx-border-width: 2px; /* Bordes laterales y parte inferior */
+    -fx-border-radius: 32px; /* Redondeo inferior */
+}
+
+#logInTabPane {
+    -fx-background-color: #a2a2a2;
+    -fx-background-radius: 32;
+    -fx-fit-to-width: true;
+    -fx-fit-to-height: true;
+
+}
+
+#loginPass {
+    -fx-background-color: #d3d3d3;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 0);
+}
+
+
+#loginUser {
+    -fx-background-color: #d3d3d3;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 0);
+}
+
+#logInButton {
+    -fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #07bbff 15%, #22a4d3 75%);
+    -fx-background-radius: 16;
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+#userLabel {
+    -fx-text-fill: linear-gradient(from 90% 100% to 10% 0%, #07bbff 15%, #22a4d3 75%);
+    -fx-font-size: 14;
+}
+
+#passwordLabel {
+    -fx-text-fill: linear-gradient(from 90% 100% to 10% 0%, #07bbff 15%, #22a4d3 75%);
+    -fx-font-size: 14;
+}
+
+#regUser {
+    -fx-background-color: #d3d3d3;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 0);
+}
+
+#regPass {
+    -fx-background-color: #d3d3d3;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 0);
+}
+
+#confirm {
+    -fx-background-color: #d3d3d3;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 10, 0, 0, 0);
+}
+
+#regUserLabel {
+    -fx-text-fill: linear-gradient(from 90% 100% to 10% 0%, #07bbff 15%, #22a4d3 75%);
+    -fx-font-size: 14;
+}
+
+#regPassLabel {
+    -fx-text-fill: linear-gradient(from 90% 100% to 10% 0%, #07bbff 15%, #22a4d3 75%);
+    -fx-font-size: 14;
+}
+
+#confirmLabel {
+    -fx-text-fill: linear-gradient(from 90% 100% to 10% 0%, #07bbff 15%, #22a4d3 75%);
+    -fx-font-size: 14;
+}
+
+
+#registerBtn {
+    -fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #07bbff 15%, #22a4d3 75%);
+    -fx-background-radius: 16;
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+.tab-pane:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+/* Pestaña seleccionada */
+.tab-pane .tab-header-area .tab:selected {
+    -fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #07bbff 15%, #22a4d3 75%); /* Fondo seleccionado */
+    -fx-padding: 10px 15px; /* Mantener el mismo espacio para la pestaña seleccionada */
+}
+
+/* Pestañas normales */
+.tab-pane .tab-header-area .tab {
+    -fx-background-color: #f0f0f0; /* Fondo para no seleccionadas */
+    -fx-background-radius: 12px; /* Redondear esquinas */
+    -fx-border-color: transparent; /* Sin borde visible */
+    -fx-border-radius: 12px; /* Mantener esquinas redondeadas */
+    -fx-padding: 10px 15px; /* Aumentar el espacio entre las pestañas */
+    -fx-margin: 10px; /* Agregar margen entre los tabs */
+    -fx-hgap: 10px;
+}
+
+/* Cambiar el borde inferior de la cabecera */
+.tab-pane .tab-header-area {
+    -fx-border-color: #cccccc; /* Color del borde */
+    -fx-border-width: 0 0 2px 0; /* Sólo en la parte inferior */
+    -fx-background-color: rgba(248, 248, 248, 0); /* Fondo del área de encabezado */
+    -fx-background-radius: 12px;
+}
+
+/* Área de contenido del TabPane */
+.tab-pane .tab-content-area {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 0 0 12px 12px;
+}
+
+.tab-pane .tab-header-area .tab:selected .text {
+    -fx-fill: white; /* Cambia el color del texto específicamente */
+}
+
+/* Pestañas no seleccionadas */
+.tab-pane .tab-header-area .tab .text {
+    -fx-fill: black; /* Asegúrate de que las pestañas normales tengan texto negro */
+}
+
+.tab-pane {
+    -fx-border-color: #07bbff; /* Conecta con la pestaña seleccionada */
+    -fx-border-width: 0 2 2 2;
+    -fx-border-radius: 12;
+}

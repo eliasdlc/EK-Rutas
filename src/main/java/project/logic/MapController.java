@@ -34,17 +34,23 @@ public class MapController implements Serializable {
         }
     }
 
-    public static void loadData(){
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_PATH))){
+    public static void loadData() {
+        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(FILE_PATH))) {
             myMap = (MapController) in.readObject();
-        } catch (FileNotFoundException e){
+        } catch (FileNotFoundException e) {
+            System.out.println("Data file not found. Creating a new MapController instance.");
             myMap = new MapController();
-        } catch (IOException e) {
+        } catch (StreamCorruptedException e) {
+            System.err.println("Invalid file format. Recreating the data file.");
+            new File(FILE_PATH).delete();
+            myMap = new MapController();
+            saveData(); // Save an empty MapController instance
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
+
+
 
     public List<Graph> getGraphs() {
         return graphs;

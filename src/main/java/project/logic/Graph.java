@@ -15,13 +15,35 @@ public class Graph implements Serializable {
     private final String graphId;
     private List<StopNode> nodes;
     private int numVertex;
+    private String nombre;
 
-	public Graph(int numVertex, String graphId) {
+	public Graph(int numVertex, String graphId, String nombre) {
 		setListRoutes(new HashMap<>(numVertex));
         this.graphId = graphId;
         this.nodes = new ArrayList<>();
         this.numVertex = numVertex;
+        this.nombre = nombre;
 	}
+
+    public void setNombre(String nombre) {
+        nombre = nombre;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getCantRutas() {
+        int cantRutas = 0;
+        for (List<Route> routes : listRoutes.values()) {
+            cantRutas += routes.size();
+        }
+        return cantRutas;
+    }
+
+    public int getCantNodos() {
+        return listRoutes.size();
+    }
 
     public int getNumVertex() {
         return numVertex;
@@ -253,4 +275,5 @@ public class Graph implements Serializable {
   	public void setListRoutes(HashMap<StopNode, List<Route>> listRoutes) {
   		this.listRoutes = listRoutes;
   	}
+
 }
