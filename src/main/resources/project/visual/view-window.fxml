@@ -26,7 +26,7 @@
         <BorderPane fx:id="mainElements" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="690" prefWidth="810.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
 
             <top>
-                <FlowPane fx:id="actionButtons" columnHalignment="CENTER" hgap="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="495.0" minWidth="810.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="888.0" BorderPane.alignment="CENTER">
+                <FlowPane fx:id="actionButtons" columnHalignment="CENTER" hgap="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="495.0" minWidth="810.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="900.0" BorderPane.alignment="CENTER">
                     <BorderPane.margin>
                         <Insets />
                     </BorderPane.margin>
@@ -43,9 +43,9 @@
                         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                      </padding>
                   </FlowPane>
-                   <ScrollPane fx:id="grafoScroll" fitToHeight="false" fitToWidth="true" hbarPolicy="NEVER" prefHeight="700.0" prefWidth="888.0" vbarPolicy="AS_NEEDED">
+                   <ScrollPane fx:id="grafoScroll" fitToHeight="false" fitToWidth="true" hbarPolicy="NEVER" prefHeight="700.0" prefWidth="900.0" vbarPolicy="AS_NEEDED">
                        <content>
-                           <FlowPane fx:id="grafoList" hgap="20.0" prefWidth="888.0" vgap="20.0">
+                           <FlowPane fx:id="grafoList" hgap="20.0" prefWidth="900.0" vgap="20.0">
                                <padding>
                                    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
                                </padding>
@@ -82,18 +82,6 @@
                                         <Rectangle2D height="128.0" width="128.0" />
                                     </viewport>
                                     <Image url="@icons/house-blank.png" />
-                                </ImageView>
-                            </graphic>
-                        </Button>
-                        <Button fx:id="optionsButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#changeToOptions" prefHeight="60.0" prefWidth="60.0">
-                            <graphic>
-                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@icons/settings-hollow.png" />
-                                    </image>
-                                    <viewport>
-                                        <Rectangle2D height="128.0" width="128.0" />
-                                    </viewport>
                                 </ImageView>
                             </graphic>
                         </Button>

@@ -18,19 +18,25 @@
     <right>
         <StackPane fx:id="stackPane" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER">
             <!-- Buttons Panel -->
-            <FlowPane fx:id="buttons" prefHeight="690" prefWidth="396" BorderPane.alignment="CENTER">
+            <FlowPane fx:id="buttons" alignment="TOP_CENTER" columnHalignment="CENTER" prefHeight="690" prefWidth="396.0" vgap="20.0" BorderPane.alignment="CENTER">
                 <BorderPane.margin>
                     <Insets bottom="0" left="10" right="0" top="0" />
                 </BorderPane.margin>
                 <children>
-                    <Button fx:id="addNodeBtn" mnemonicParsing="false" onAction="#addNode" prefHeight="90.0" prefWidth="396.0" text="Agregar Nodo" />
-                    <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#enableDeleteMode" prefHeight="90.0" prefWidth="396.0" text="Eliminar" />
-                    <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveGraph" prefHeight="90.0" prefWidth="396.0" text="Guardar" />
+                    <Button fx:id="addNodeBtn" mnemonicParsing="false" onAction="#addNode" prefHeight="30.0" prefWidth="200.0" text="Agregar Nodo" />
+                    <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#enableDeleteMode" prefHeight="30.0" prefWidth="200.0" text="Eliminar" />
+                    <Button fx:id="saveBtn" mnemonicParsing="false" onAction="#saveGraph" prefHeight="30.0" prefWidth="200.0" text="Guardar" />
                 </children>
+            <StackPane.margin>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </StackPane.margin>
+            <padding>
+               <Insets bottom="50.0" left="10.0" right="10.0" top="10.0" />
+            </padding>
             </FlowPane>
 
             <!-- Trip Panel -->
-            <FlowPane fx:id="tripPanel" disable="true" prefHeight="690" prefWidth="396" style="-fx-background-color: #2A2A2A;" visible="false" BorderPane.alignment="CENTER">
+            <FlowPane fx:id="tripPanel" disable="true" prefHeight="690" prefWidth="396" style="-fx-background-color: #2A2A2A;" vgap="20.0" visible="false" BorderPane.alignment="CENTER">
                 <children>
                     <Button mnemonicParsing="false" onAction="#showAlgorithmPanel" text="Escoger Algoritmo" />
                     <Button mnemonicParsing="false" onAction="#showPriorityPanel" text="Escoger Prioridad" />
@@ -40,7 +46,7 @@
             </FlowPane>
 
             <!-- Node handler panel-->
-            <FlowPane fx:id="nodeHandlerPanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
+            <FlowPane fx:id="nodeHandlerPanel" disable="true" prefHeight="690" prefWidth="396" vgap="20.0" visible="false" BorderPane.alignment="CENTER">
                 <children>
                     <Button mnemonicParsing="false" onAction="#addRoute" text="Agregar Ruta" />
                     <Button mnemonicParsing="false" onAction="#showTripPanel" text="Encontrar Camino" />
@@ -48,7 +54,7 @@
             </FlowPane>
 
             <!-- Algorithm Panel -->
-            <FlowPane fx:id="algorithmPanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
+            <FlowPane fx:id="algorithmPanel" disable="true" prefHeight="690" prefWidth="396" vgap="20.0" visible="false" BorderPane.alignment="CENTER">
                 <children>
                     <Button mnemonicParsing="false" onAction="#chooseDijkstra" text="Dijkstra" />
                     <Button mnemonicParsing="false" onAction="#choosePrim" text="Prim MST" />
@@ -56,7 +62,7 @@
             </FlowPane>
 
             <!-- Priority Panel -->
-            <FlowPane fx:id="priorityPanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
+            <FlowPane fx:id="priorityPanel" disable="true" prefHeight="690" prefWidth="396" vgap="20.0" visible="false" BorderPane.alignment="CENTER">
                 <children>
                     <Button mnemonicParsing="false" onAction="#chooseGeneral" text="General" />
                     <Button mnemonicParsing="false" onAction="#chooseDistancia" text="Distancia" />
@@ -67,13 +73,13 @@
             </FlowPane>
 
             <!-- Deleting Panel-->
-            <FlowPane fx:id="deletePanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
+            <FlowPane fx:id="deletePanel" disable="true" prefHeight="690" prefWidth="396" vgap="20.0" visible="false" BorderPane.alignment="CENTER">
                 <Button mnemonicParsing="false" onAction="#removeNode" text="Eliminar Nodo" />
                 <Button mnemonicParsing="false" onAction="#removeRoute" text="Eliminar Ruta" />
             </FlowPane>
 
             <!-- Deleting Routes Panel-->
-            <FlowPane fx:id="deleteRoutePanel" disable="true" prefHeight="690" prefWidth="396" visible="false" BorderPane.alignment="CENTER">
+            <FlowPane fx:id="deleteRoutePanel" disable="true" prefHeight="690" prefWidth="396" vgap="20.0" visible="false" BorderPane.alignment="CENTER">
                 <TableView fx:id="routesTable" layoutX="20" layoutY="20" prefHeight="200" prefWidth="396">
                     <columns>
                         <TableColumn fx:id="nameColumn" prefWidth="100" text="Nombre" />
@@ -83,12 +89,18 @@
                         <TableColumn fx:id="transpColumn" prefWidth="60" text="Trasbordo" />
                     </columns>
                 </TableView>
+            <StackPane.margin>
+               <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </StackPane.margin>
             </FlowPane>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
         </StackPane>
     </right>
    
    <left>
-      <Pane fx:id="map" maxWidth="1.7976931348623157E308" prefHeight="690.0" prefWidth="1106" BorderPane.alignment="CENTER">
+      <Pane fx:id="map" maxWidth="1.7976931348623157E308" prefHeight="690.0" prefWidth="1086.0" BorderPane.alignment="CENTER">
       		<BorderPane.margin>
                 <Insets bottom="0" left="0" right="10" top="0" />
             </BorderPane.margin>

@@ -238,6 +238,10 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
 
     @FXML
     private void chooseDijkstra(ActionEvent event) {
+        resetBtnStyle();
+        resetAllLineColors();
+        hideAllPanels();
+        showMainButtonPanel();
         dijkstra = true;
         prim = false;
         hidePanel(algorithmPanel);
@@ -245,6 +249,7 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
     }
     @FXML
     private void choosePrim(ActionEvent event) {
+
         prim = true;
         dijkstra = false;
         hidePanel(algorithmPanel);
@@ -253,30 +258,47 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
 
     @FXML
     private void chooseGeneral(ActionEvent event) {
+
         hidePanel(priorityPanel);
         priority = null;
         showTripPanel();
     }
     @FXML
     private void chooseDistancia(ActionEvent event) {
+        resetBtnStyle();
+        resetAllLineColors();
+        hideAllPanels();
+        showMainButtonPanel();
         hidePanel(priorityPanel);
         priority = Criteria.DISTANCIA;
         showTripPanel();
     }
     @FXML
     private void chooseTiempo(ActionEvent event) {
+        resetBtnStyle();
+        resetAllLineColors();
+        hideAllPanels();
+        showMainButtonPanel();
         hidePanel(priorityPanel);
         priority = Criteria.TIEMPO;
         showTripPanel();
     }
     @FXML
     private void chooseCosto(ActionEvent event) {
+        resetBtnStyle();
+        resetAllLineColors();
+        hideAllPanels();
+        showMainButtonPanel();
         hidePanel(priorityPanel);
         priority = Criteria.COSTO;
         showTripPanel();
     }
     @FXML
     private void chooseTransbordo(ActionEvent event) {
+        resetBtnStyle();
+        resetAllLineColors();
+        hideAllPanels();
+        showMainButtonPanel();
         hidePanel(priorityPanel);
         priority = Criteria.TRANSBORDO;
         showTripPanel();
@@ -309,10 +331,9 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
     }
 
     @FXML
-    private void addNode(ActionEvent e){
-
+    private void addNode(ActionEvent e) {
         map.setOnMouseClicked(event -> {
-            map.setOnMouseClicked(null);
+            map.setOnMouseClicked(null); // Desactivar temporalmente para evitar múltiples clics
             double x = event.getX();
             double y = event.getY();
             String idNode = IdGenerator.generateId();
@@ -330,32 +351,27 @@ public class graphCreationController implements ViewWindow.OnSelectedGraph{
             nodeBtn.setLayoutY(y);
             nodeBtn.setOnAction(btnEvent -> handleNodeSelection(nodeBtn));
 
-            TextField txtFld = new TextField(null);
+            TextField txtFld = new TextField();
             txtFld.setPrefWidth(160);
             txtFld.setPrefHeight(20);
-            txtFld.setLayoutX(x - txtFld.getPrefWidth()/2 + baseRadius);
-            txtFld.setLayoutY(y - (txtFld.getPrefHeight()/2) - 35);
+            txtFld.setLayoutX(x - txtFld.getPrefWidth() / 2 + 30); // Ajuste centrado basado en radio
+            txtFld.setLayoutY(y - txtFld.getPrefHeight() - 40); // Posición sobre el nodo
             txtFld.setBackground(new Background(new BackgroundFill(
                     Color.rgb(42, 42, 42, 0),
-                    CornerRadii.EMPTY,      // Sin bordes redondeados
-                    Insets.EMPTY)));        // Sin margen interno
-            txtFld.setFont( Font.font("Inter", FontWeight.BOLD, 18) );
+                    CornerRadii.EMPTY, Insets.EMPTY)));
+            txtFld.setFont(Font.font("Inter", FontWeight.BOLD, 18));
             txtFld.setStyle("-fx-text-fill: white; -fx-alignment: center;");
 
             buttonTextFieldMap.put(nodeBtn, txtFld);
             map.getChildren().add(nodeBtn);
             map.getChildren().add(txtFld);
 
-            txtFld.requestFocus();
-            txtFld.setOnAction(textEvent -> {
-                String name = txtFld.getText();
-                if(graph.getNodes() != null) {
-                    graph.getNodes().add(new StopNode(idNode, name, x, y));
-                    txtFld.setEditable(false);
-                }
-            });
+            // Hacer el nodo arrastrable
+
+
         });
     }
+
 
     private void ifGraphNull(Graph graph){
         if(graph == null){

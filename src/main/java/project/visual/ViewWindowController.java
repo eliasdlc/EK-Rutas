@@ -63,7 +63,7 @@ public class ViewWindowController {
             grafoList.getChildren().add(graphPane);
         }
 
-        List<Button> sidebarButtons = new ArrayList<>(List.of(homeButton, optionsButton, closeButton));
+        List<Button> sidebarButtons = new ArrayList<>(List.of(homeButton, closeButton));
 
         for (Button button : sidebarButtons) {
             setupSidebarButtonAnimation(button);
@@ -207,7 +207,8 @@ public class ViewWindowController {
         // Opción de eliminar
         javafx.scene.control.MenuItem deleteOption = new javafx.scene.control.MenuItem("Eliminar");
         deleteOption.setOnAction(e -> {
-            grafoList.getChildren().remove(graphPane); // Eliminar del contenedor
+            grafoList.getChildren().remove(graphPane);
+            MapController.getInstance().getGraphs().remove(graph);// Eliminar del contenedor
             // Aquí podrías agregar lógica adicional para eliminar el grafo del modelo si es necesario.
         });
 

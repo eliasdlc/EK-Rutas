@@ -52,16 +52,65 @@ root {
 }
 
 #addNodeBtn {
-	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 5.0%, #efa8e5 15.0%, #f372ef 80.0%);
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 5.0%, #efa8e5 15.0%, #f372ef 60.0%);
 	-fx-font-size: 20;
+	-fx-background-radius: 16;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
 }
 
 #deleteBtn {
-	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 3.0%, #efa8e5 7.0%, #f372ef 90.0%);
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #f1cbd6 5.0%, #efa8b9 15.0%, #f3728a 60.0%);
 	-fx-font-size: 20;
+	-fx-background-radius: 16;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
 }
 
 #saveBtn {
-	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 3.0%, #efa8e5 7.0%, #f372ef 90.0%);
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #d6f1cb 5.0%, #bcefa8 15.0%, #8af372 60.0%);
 	-fx-font-size: 20;
+	-fx-background-radius: 16;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#tripPanel .button {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 5.0%, #efa8e5 15.0%, #f372ef 60.0%);
+	-fx-font-size: 20;
+	-fx-background-radius: 16;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#nodeHandlerPanel .button {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 5.0%, #efa8e5 15.0%, #f372ef 60.0%);
+	-fx-font-size: 20;
+	-fx-background-radius: 16;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#algorithmPanel .button {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 5.0%, #efa8e5 15.0%, #f372ef 60.0%);
+	-fx-font-size: 20;
+	-fx-background-radius: 16;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#priorityPanel .button {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 5.0%, #efa8e5 15.0%, #f372ef 60.0%);
+	-fx-font-size: 20;
+	-fx-background-radius: 16;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
+}
+
+#deletePanel .button {
+	-fx-background-color: linear-gradient(from 90% 100% to 10% 0%, #eecbf1 5.0%, #efa8e5 15.0%, #f372ef 60.0%);
+	-fx-font-size: 20;
+	-fx-background-radius: 16;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
 }
